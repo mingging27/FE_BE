@@ -1,18 +1,34 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "css/myinfo_update.css" %}}">
     <title>Document</title>
-</head>
-<body>
-    <a href="{{request.META.HTTP_REFERER|escape}}">뒤로 가기</a><br>
+  </head>
+  <body>
+    <header>
+      <a href="{{request.META.HTTP_REFERER|escape}}"><img src="{% static "img/back.png"%}" /></a>
+    </header>
+
+    <section>
+        <form method="POST" action="{% url 'accounts:myinfo_update' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" id="photo" />
+            <label for="photo"></label>
+            <div>이름</div>
+            <input type="text" name="nickname" value="{{ info.nickname }}" />
+            <input type="submit" value="수정하기" />
+      </form>
+    </section>
+
+    <a href="{{request.META.HTTP_REFERER|escape}}">뒤로 가기</a><br />
     <form method="POST" action="{% url 'accounts:myinfo_update' %}" enctype="multipart/form-data">
-        {% csrf_token %}
-        기존 프로필: <img width="100" height="100" src="{{ request.user.image.url }}"><br>
-        이미지 변경: <input type="file" name="image"><br>
-        이름: <input type="text" name="nickname" value="{{ info.nickname }}"><br>
-        <input type="submit" value="수정하기">
-    </form>
-</body>
+      {% csrf_token %} 기존 프로필: <img width="100" height="100" src="{{ request.user.image.url }}" /><br />
+      이미지 변경: <input type="file" name="image" /><br />
+      이름: <input type="text" name="nickname" value="{{ info.nickname }}" /><br />
+      <input type="submit" value="수정하기" />
+    
+  </body>
 </html>
