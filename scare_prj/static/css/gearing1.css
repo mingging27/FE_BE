@@ -120,7 +120,7 @@ li {
 
   border: 1px solid black;
   border-radius: 7px;
-  margin: 5px 0 15px;
+  margin: 5px 0 3px;
 }
 
 #search-form input {
@@ -185,5 +185,10 @@ li {
 p {
   font-size: 14px;
   font-weight: 400;
-  margin-left: 10px;
+  margin: 13px;
+  color: red;
+}
+
+.none {
+  margin: 3px;
 }

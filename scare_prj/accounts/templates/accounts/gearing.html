@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static "css/gearing.css" %}">
+    <link rel="stylesheet" href="{% static "css/gearing1.css" %}">
     <title>효담 - 연동하기</title>
     <style>
       /* 기본적인 모달 스타일 */
@@ -80,7 +80,6 @@
         </form>
 
     {% if searched %}
-    <h3>검색 결과</h3>
     {% if searched_user %}
     <ul class="search_result">
       <li class="list_o">
@@ -95,7 +94,7 @@
       </li>
     </ul>
     {% else %}
-    <p>일치하는 계정이 없습니다.</p>
+    <p class="none">일치하는 계정이 없습니다.</p>
     {% endif %} {% endif %}
     </section>
 

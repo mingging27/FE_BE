@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static "css/myinfo_update.css" %}}">
+    <link rel="stylesheet" href="{% static "css/myinfo_update.css" %}">
     <title>Document</title>
   </head>
   <body>
@@ -13,22 +13,24 @@
     </header>
 
     <section>
-        <form method="POST" action="{% url 'accounts:myinfo_update' %}" enctype="multipart/form-data">
-            {% csrf_token %}
-            <input type="file" id="photo" />
-            <label for="photo"></label>
-            <div>이름</div>
-            <input type="text" name="nickname" value="{{ info.nickname }}" />
-            <input type="submit" value="수정하기" />
+      <form method="POST" action="{% url 'accounts:myinfo_update' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="photoLine">
+          <input type="file" id="photo" onchange="loadFile(this)" />
+          <label for="photo" class="photo"></label>
+        </div>
+
+        <div class="nameLine">
+          <div>이름</div>
+          <input type="text" name="nickname" value="{{ info.nickname }}" />
+        </div>
+        <div class="doneLine">
+          <button type="submit" id="done"></button>
+          <label for="done">완료</label>
+        </div>
       </form>
     </section>
 
-    <a href="{{request.META.HTTP_REFERER|escape}}">뒤로 가기</a><br />
-    <form method="POST" action="{% url 'accounts:myinfo_update' %}" enctype="multipart/form-data">
-      {% csrf_token %} 기존 프로필: <img width="100" height="100" src="{{ request.user.image.url }}" /><br />
-      이미지 변경: <input type="file" name="image" /><br />
-      이름: <input type="text" name="nickname" value="{{ info.nickname }}" /><br />
-      <input type="submit" value="수정하기" />
-    
+    <script src="./js/re.js"></script>
   </body>
 </html>
