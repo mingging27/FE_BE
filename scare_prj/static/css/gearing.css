@@ -59,9 +59,11 @@ ul {
 }
 
 .list_o {
+  width: 330px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
 li {
@@ -191,4 +193,10 @@ p {
 
 .none {
   margin: 3px;
+}
+
+.applyLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

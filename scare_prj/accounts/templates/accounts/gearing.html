@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static "css/gearing1.css" %}">
+    <link rel="stylesheet" href="{% static "css/gearing.css" %}">
     <title>효담 - 연동하기</title>
     <style>
       /* 기본적인 모달 스타일 */
@@ -83,9 +83,11 @@
     {% if searched_user %}
     <ul class="search_result">
       <li class="list_o">
-        <img src="{% static "img/o.png"%}" />
-        <div>{{ searched_user.nickname }}</div>
-
+        <div class="applyLine">
+          <img src="{% static "img/o.png"%}" />
+          <div>{{ searched_user.nickname }}</div>
+        </div>
+        
         <form class="link-account-form" action="{% url 'accounts:link_account' searched_user.id %}" method="post">
           {% csrf_token %}
           <button type="submit" id="apply"></button>
