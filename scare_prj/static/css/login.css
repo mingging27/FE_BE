@@ -49,6 +49,35 @@ input {
   outline: none;
 }
 
+#loginError {
+  width: 280px;
+  height: 36px;
+  padding: 4px;
+
+  border: 1px solid #d91818;
+  border-radius: 7px;
+  background-color: rgba(217, 24, 24, 0.11);
+
+  display: none;
+  flex-direction: row;
+  align-items: center;
+}
+
+#loginError img {
+  width: 14px;
+  height: 14px;
+
+  margin: 0 4px 17px;
+}
+
+#loginError p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #d91818;
+
+  margin: 2px;
+}
+
 button {
   width: 288px;
   height: 54px;
