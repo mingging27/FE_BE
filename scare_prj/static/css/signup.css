@@ -81,6 +81,7 @@ a {
 .select {
   display: flex;
   flex-direction: row;
+  margin-top: 20px;
 }
 
 .select input {
@@ -103,4 +104,27 @@ a {
   &:hover {
     cursor: pointer;
   }
+}
+
+#pw2 {
+  margin-bottom: 5px;
+}
+
+#pwError {
+  font-size: 12px;
+  font-weight: 300;
+  color: #d91818;
+
+  width: 290px;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  margin-left: 5px;
+}
+
+#pwError img {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px 0 0;
 }

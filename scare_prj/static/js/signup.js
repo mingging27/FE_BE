@@ -20,3 +20,19 @@ radios.forEach((radio) => {
     }
   });
 });
+
+let samePW1 = document.getElementById("id_password1");
+let samePW2 = document.getElementById("id_password2");
+let errorMessage = document.getElementById("pwError");
+
+samePW2.addEventListener("change", (e) => {
+  if (samePW1.value !== samePW2.value) {
+    errorMessage.style.display = "flex";
+    samePW2.style.border = "1px solid #d91818";
+    samePW2.style.backgroundColor = "rgba(217, 24, 24, 0.11)";
+  } else {
+    errorMessage.style.display = "none";
+    samePW2.style.border = "1px solid black";
+    samePW2.style.backgroundColor = "";
+  }
+});
