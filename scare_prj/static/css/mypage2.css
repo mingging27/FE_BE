@@ -35,20 +35,21 @@ nav {
 }
 
 .inputPhoto {
-  display: flex;
-}
-
-#photo {
-  display: none;
-}
-
-#photo + label {
   width: 80px;
   height: 80px;
   border: 1px solid rgba(201, 153, 249, 1);
   border-radius: 100%;
-  background-image: url("../img/inputphoto.png");
   margin-right: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputPhoto img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
 }
 
 .userInfo {

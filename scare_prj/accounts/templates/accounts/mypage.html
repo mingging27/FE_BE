@@ -4,15 +4,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static "css/mypage.css" %}">
+    <link rel="stylesheet" href="{% static "css/mypage2.css" %}">
     <title>Document</title>
   </head>
   <body>
     <header><img src="{% static "img/logo.png" %}"></header>
     <nav>
       <div class="inputPhoto">
-        <input type="file" id="photo" />
-        <label for="photo"></label>
+        <img src="{{ request.user.image.url }}">
       </div>
 
       <div class="userInfo">
@@ -32,5 +31,7 @@
     <a href="{% url 'cal:home' %}">홈</a>
     체크리스트 기록
     <a href="{% url 'accounts:mypage' %}">마이페이지</a>
+
+    <script src="{% static "js/myinfo_update1.js"%}"></script>
   </body>
 </html>

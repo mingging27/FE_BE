@@ -4,20 +4,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static "css/myinfo_update.css" %}">
+    <link rel="stylesheet" href="{% static "css/myinfo_update1.css" %}">
     <title>Document</title>
   </head>
   <body>
     <header>
-      <a href="{{request.META.HTTP_REFERER|escape}}"><img src="{% static "img/back.png"%}" /></a>
+      <a href="{%url 'accounts:mypage'%}"><img src="{% static "img/back.png"%}" /></a>
     </header>
 
     <section>
       <form method="POST" action="{% url 'accounts:myinfo_update' %}" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="photoLine">
-          <input type="file" id="photo" onchange="loadFile(this)" />
-          <label for="photo" class="photo"></label>
+          <input type="file" id="image-upload" name="image" accept="image/*" />
+          <label for="image-upload"><img class="preview" id="profile-image" src="{{ request.user.image.url }}" /></label>
         </div>
 
         <div class="nameLine">
@@ -31,6 +31,19 @@
       </form>
     </section>
 
-    <script src="./js/re.js"></script>
+    <script>
+      document.getElementById("image-upload").addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          document.getElementById("profile-image").src = e.target.result;
+        };
+
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      });
+    </script>
   </body>
 </html>

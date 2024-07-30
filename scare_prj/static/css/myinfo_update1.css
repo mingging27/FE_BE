@@ -36,24 +36,24 @@ header img {
   border-bottom: 1px solid black;
 }
 
-#photo {
+#image-upload {
   display: none;
 }
 
-#photo + label {
+.preview {
   width: 80px;
   height: 80px;
   border: 1px solid rgba(201, 153, 249, 1);
   border-radius: 100%;
-  margin-right: 20px;
-  background-image: url(../img/inputphoto.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
 
   &:hover {
     cursor: pointer;
   }
+}
+
+.preview img {
+  width: 80px;
+  height: 80px;
 }
 
 .nameLine {
