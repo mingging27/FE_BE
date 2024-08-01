@@ -51,14 +51,14 @@
             <div>{{ schedule.title }}</div>
             {% endif %}
             <!--이전 달-->
-            {% elif cls == 'prev-month' %} {% if month == 1 %} {% if schedule.date.year == year|add:-1 and schedule.date.month == 12 and schedule.date.day ==
-            day %}
+            {% if cls == 'prev-month' %} {% if month == 1 %} {% if schedule.date.year == year|add:-1 and schedule.date.month == 12 and schedule.date.day == day
+            %}
             <div>{{ schedule.title }}</div>
             {% endif %} {% else %} {% if schedule.date.year == year and schedule.date.month == month|add:-1 and schedule.date.day == day %}
             <div>{{ schedule.title }}</div>
             {% endif %} {% endif %}
             <!--다음 달-->
-            {% elif cls == 'next-month' %} {% if month == 12 %} {% if schedule.date.year == year|add:1 and schedule.date.month == 1 and schedule.date.day == day
+            {% if cls == 'next-month' %} {% if month == 12 %} {% if schedule.date.year == year|add:1 and schedule.date.month == 1 and schedule.date.day == day
             %}
             <div>{{ schedule.title }}</div>
             {% endif %} {% else %} {% if schedule.date.year == year and schedule.date.month == month|add:1 and schedule.date.day == day %}
