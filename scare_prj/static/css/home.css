@@ -1,0 +1,157 @@
+@font-face {
+  font-family: "NanumBarunpen";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "NanumBarunpen";
+  -webkit-touch-callout: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+a {
+  color: #000;
+  color: var(--main-black);
+  text-decoration: none;
+}
+
+body {
+  width: 375px;
+  height: 667px;
+  margin: 0;
+  border: 1px solid black;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+nav .nav-logo {
+  text-align: center;
+  padding-top: 33px;
+}
+
+nav .nav-logo img {
+  width: 35px;
+}
+
+nav .nav-title {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .nav-title .date {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.rightbox {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-txt {
+  height: 20px;
+  width: 120px;
+  border: 0;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.search-btn {
+  background: url(../img/search20.png) center;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  text-indent: -9999px;
+  border: 0;
+}
+
+.alarm-btn {
+  background: url(../img/alarm20.png) center;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+}
+
+.container-schedule .schedule {
+  padding: 15px 0;
+}
+
+.bottom-navigation {
+  align-items: flex-start !important;
+  background-color: #ffffff;
+  border-radius: 0;
+  border-top: 1.5px solid #e1e1e1 !important;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  height: 3.4rem;
+  padding: 12px 0;
+  position: fixed;
+  z-index: 10;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-menu .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.nav-menu .menu .icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+.nav-menu .menu span {
+  font-size: 12px;
+}
+
+
+.container-schedule .schedule {
+  background-color: rgb(255, 255, 255);
+  height: 400px;
+  padding: 0 20px 0 20px;
+}
+
+.dayoff {
+  color: red;
+}
+
+.saturday {
+  color: #1a55ee;
+}
+
+thead th {
+  padding: 10px 22px 10px 10px;
+}
+
+td {
+  padding: 10px 22px 45px 10px;
+}

@@ -38,7 +38,7 @@ def login_view(request):
     if form.is_valid():
         login(request, form.user_cache)
         return redirect('cal:home')
-    return render(request, 'accounts/login.html', {'form' : form})
+    return render(request, 'accounts/login.html', {'form' : form, 'login_failed': True})
 
 # 로그아웃
 def logout_view(request):
@@ -46,10 +46,12 @@ def logout_view(request):
         logout(request)
     return redirect('accounts:index')
 
+@login_required
 # 마이페이지
 def mypage(request):
     return render(request, 'accounts/mypage.html')
 
+@login_required
 # 나의 정보 수정
 def myinfo_update(request):
     info = request.user
