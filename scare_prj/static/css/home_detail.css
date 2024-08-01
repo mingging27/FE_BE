@@ -1,7 +1,6 @@
 @font-face {
   font-family: "NanumBarunpen";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff")
-    format("woff");
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -91,10 +90,6 @@ nav .nav-title .date {
   margin-left: 15px;
 }
 
-.container-schedule .schedule {
-  padding: 15px 0;
-}
-
 .bottom-navigation {
   align-items: flex-start !important;
   background-color: #ffffff;
@@ -133,11 +128,102 @@ nav .nav-title .date {
   font-size: 12px;
 }
 
+.container-schedule {
+  padding: 0 20px 0 20px;
+}
 
 .container-schedule .schedule {
-  background-color: rgb(255, 255, 255);
-  height: 400px;
-  padding: 0 20px 0 20px;
+  background-color: white;
+  background-clip: content-box;
+  padding: 0 0 10px 0;
+  height: 240px;
+}
+
+.divider {
+  border: 1px solid #e4e4e4;
+  padding: 0px;
+  margin: 5px 0 10px 0;
+}
+
+.plan-date {
+  padding: 10px 0 10px 0;
+  font-weight: bold;
+}
+
+.planner {
+  position: relative;
+  padding: 0 0 10px 0;
+}
+
+.plan-group {
+  padding: 10px 0 0 0;
+}
+
+.plan-group .titlebar {
+  background-color: orange;
+  background-clip: content-box;
+  height: 40px;
+  width: 4px;
+  padding-right: 5px;
+  float: left;
+}
+
+.plan-group .plan-txt {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.plan-group .plan-txt .title {
+}
+
+.plan-group .plan-txt .time {
+  font-size: smaller;
+  color: #aaaaaa;
+}
+
+.add-btsn {
+  cursor: pointer;
+  float: right;
+  width: 45px;
+  height: 45px;
+  background: url(../img/add-btn.png) center no-repeat;
+  background-clip: content-box;
+  border: 1px solid #aaaaaa;
+  border-radius: 50%;
+}
+
+.add-btn {
+  position: absolute;
+  right: 1px;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  border: 1px solid #aaaaaa;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.add-btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #aaaaaa;
+  height: 50%;
+  width: 3px;
+}
+
+.add-btn:after {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 3px;
+  width: 50%;
+  background: #aaaaaa;
+  top: 50%;
+  left: 50%;
 }
 
 .dayoff {
@@ -148,10 +234,22 @@ nav .nav-title .date {
   color: #1a55ee;
 }
 
+thead th:first-child {
+  color: red; /* 일요일 색상 */
+}
+
+thead th:last-child {
+  color: #1a55ee; /* 토요일 색상 */
+}
+
+.previous-month {
+  opacity: 0.8;
+}
+
 thead th {
-  padding: 10px 22px 10px 10px;
+  padding: 10px 22px 5px 10px;
 }
 
 td {
-  padding: 10px 22px 45px 10px;
+  padding: 10px 22px 7px 10px;
 }

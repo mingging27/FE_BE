@@ -1,21 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static './css/home.css' %}" />
     <title>Document</title>
   </head>
   <body>
-    <h1>로고</h1>
-    <hr />
-    <a href="{% url 'checklist:notification' %}">알림</a><br />
-    <a href="{% url 'cal:search' %}">검색</a><br />
+    <nav>
+        <div class="nav-logo">
+          <img src="{% static './img/logo_pur.png' %}" />
+        </div>
+        <div class="nav-title">
+          <div class="date">
+            <a href="{% url 'cal:home_with_date' prev_year prev_month %}">&lt;</a>
+            {{ year }}년 {{ month }}월
+            <a href="{% url 'cal:home_with_date' next_year next_month %}">&gt;</a>
+        </div>
+          <div class="rightbox">
+            <div class="search">
+                <a href="{% url 'checklist:notification' %}"></a>
+                <!--<form class="search-box" action="" method="get">
+                <input
+                  class="search-txt"
+                  type="text"
+                  name=""
+                  placeholder="입력하세요"
+                />-->
+              <a href="{% url 'cal:search' %}"
+                ><button class="search-btn" type="submit">검색</button></a
+              >
+            </div>
+            <a href="{%url 'checklist:notification'%}"
+              ><div class="alarm-btn"></div
+            ></a>
+          </div>
+        </div>
+    </nav>
 
-    <!-- 달력 -->
-    <a href="{% url 'cal:home_with_date' prev_year prev_month %}">&lt;</a>
-    {{ year }}년 {{ month }}월
-    <a href="{% url 'cal:home_with_date' next_year next_month %}">&gt;</a>
-    <table class="month">
+<!-- 달력 -->
+<div class="container-schedule">
+    <div class="schedule">
+        <table class="month">
       <thead>
         <tr>
           <th>일</th>
@@ -70,14 +97,38 @@
         </tr>
         {% endfor %}
       </tbody>
-    </table>
+        </table>
+    </div>
+</div>
 
-    <hr />
-    <!-- nav bar -->
-    <a href="{% url 'cal:home' %}">홈</a>
-    <a href="{% url 'checklist:home' %}">체크리스트</a>
-    <a href="{% url 'record:home' %}">기록</a>
-    <a href="{% url 'accounts:mypage' %}">마이페이지</a>
+<!-- nav bar -->
+    <div class="bottom-navigation">
+        <a class="nav-menu" href="{% url 'cal:home' %}">
+          <div class="menu">
+            <!--"{% static './img/logo_pur.png' %}"--> 
+            <img class="icon" src="{% static 'img/nav-01home.png' %}" />
+            <span>홈</span>
+          </div></a
+        >
+        <a class="nav-menu" href="#">
+          <div class="menu">
+            <img class="icon" src="{% static 'img/nav-02checklist.png' %}"/>
+            <span>체크리스트</span>
+          </div></a
+        >
+        <a class="nav-menu" href="#">
+          <div class="menu">
+            <img class="icon" src="{% static 'img/nav-03memo.png' %}"/>
+            <span>기록</span>
+          </div></a
+        >
+        <a class="nav-menu" href="#">
+          <div class="menu">
+            <img class="icon" src="{% static 'img/nav-04mypage.png' %}" />
+            <span>마이페이지</span>
+          </div></a>
+    </div>
     <br />
   </body>
+  <script src="{% static './js/home.js' %}"></script>
 </html>
