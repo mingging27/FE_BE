@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-^w7rh1ly7(6@1x5j!pdia()u%93j95fh5kj750%ifmnjq_+66z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,10 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
+    'django.contrib.humanize',
     'accounts',
     'cal',
     'checklist',
+    'record',
 ]
 
 MIDDLEWARE = [
@@ -115,7 +116,7 @@ TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

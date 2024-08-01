@@ -33,10 +33,20 @@ class Todo(models.Model):
     title = models.CharField(max_length=30)
     due_date = models.DateField(null=True, blank=True)  # 수행해야하는 날짜
     due_time = models.TimeField(null=True, blank=True)  # 수행해야 하는 시간
-    repeat_on = models.ManyToManyField(Day, blank=True)
+    repeat_on = models.ManyToManyField(Day, blank=True, related_name='todos')
     completed = models.BooleanField(default=False)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     shared_with = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='shared_todos', blank=True) # 연동된 계정끼리 같은 투두 보이기
     
     def __str__(self):
         return f'{self.title} - {self.completed}'
+
+class Notification(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='notifications')
+    message = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_read = models.BooleanField(default=False)
+    view_count = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.message
