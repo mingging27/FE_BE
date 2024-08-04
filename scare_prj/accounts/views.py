@@ -236,6 +236,9 @@ def unfollow(request, user_id):
     current_user = request.user
     user_to_unfollow = get_object_or_404(User, id=user_id)
 
+    Follow.objects.filter(from_user=current_user, to_user=user_to_unfollow).delete()
+    Follow.objects.filter(from_user=user_to_unfollow, to_user=current_user).delete()
+
     if user_to_unfollow in current_user.followings.all():
         current_user.followings.remove(user_to_unfollow)
         return redirect('accounts:gearing', id=current_user.id)
