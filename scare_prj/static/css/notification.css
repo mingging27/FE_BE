@@ -5,11 +5,17 @@
     font-weight: normal;
     font-style: normal;
   }
+  
+  * {
+    font-family: "NanumBarunpen";
+    -webkit-touch-callout: none;
+  }
 
 body {
     width: 375px;
     height: 812px;
     margin-top: 33px;
+    border: 1px solid black;
 }
 
 .title {
@@ -52,6 +58,11 @@ body {
 .new_title, .past_title {
     font-size: 16px;
     font-weight: bold;
+}
+
+.past_title {
+    margin-left: 21px;
+
 }
 
 .time {

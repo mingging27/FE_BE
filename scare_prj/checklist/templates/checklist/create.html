@@ -19,7 +19,8 @@
 
     <div class="content">
         <form method="post" class="create_form">
-            <input type="text" required id="id_title" class="checklist_title">
+            {% csrf_token %}
+            <input type="text" placeholder="제목을 입력하세요." required id="id_title" class="checklist_title">
             <div class="date_div">
                 <h4 class="subtitle">날짜</h4>
                 <input type="date" name="title" id="id_due_date" name="due_date" id="" class="date">

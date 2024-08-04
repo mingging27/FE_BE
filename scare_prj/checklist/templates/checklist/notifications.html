@@ -21,7 +21,7 @@
             <p class="new_title">새로운 알림</p>
             {% for notification in new_notifications %}
             <div class="notifiction">
-                <img src="{% static 'img/Notification.png' %}" alt="알림 아이콘" width="40" height="40">
+                <img src="{% static 'img/notification.png' %}" alt="알림 아이콘" width="40" height="40">
                 <div class="notification_text">
                     <p class="main_text">{{ notification.message }}</p>
                     {% if notification.formatted_date %}
@@ -40,7 +40,7 @@
             <p class="past_title">지난 알림</p>
             {% for notification in past_notifications %}
             <div class="notifiction">
-                <img src="{% static 'img/Notification.png' %}" alt="알림 아이콘" width="40" height="40">
+                <img src="{% static 'img/notification.png' %}" alt="알림 아이콘" width="40" height="40">
                 <div class="notification_text">
                     <p class="main_text">{{ notification.message }}</p>
                     {% if notification.formatted_date %}

@@ -12,20 +12,16 @@
   }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
     width: 375px;
     height: 812px;
     margin: 0;
     margin-top: 33px;
-    border: 1px solid black;
 }
 
-input {
-    outline: none;
-}
-
-textarea {
-    outline: none;
-}
 
 .title {
     width: 100%;
@@ -60,7 +56,10 @@ textarea {
 
 .content {
     margin-top: 15px;
-    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;;
 }
 
 .fileInput {
@@ -81,15 +80,19 @@ textarea {
 }
 
 .text_title {
+    font-weight: bold;
+    font-size: 16px;
     border: none;
-    width: 100%; 
+    width: 330px; 
     border-bottom: 1px solid #D9D9D9;
+    padding-left: 16px;
     padding-bottom: 6px;
     font-size: 16px;
     font-weight: bold;
 }
 
 .text_content {
+    font-size: 12px;
     margin-top: 15px;
     border: none;
     width: 346px;
@@ -98,6 +101,11 @@ textarea {
     resize: none;
     overflow: hidden;
     font-size: 12px;
+}
+
+.text_content p {
+    margin: 0;
+    padding-left: 16px;
 }
 
 .text_content::placeholder {
@@ -117,26 +125,12 @@ textarea {
 
 .btn_div {
     display: flex;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
 }
 
-.submit_btn {
-    border: 1px solid rgb(0, 0, 0, 0.3);
-    font-size: 18px;
-    font-weight: bold;
-    background-color: white;
-    border-radius: 5px;
-    width: 70px;
-    height: 35px;
-    margin: 0;
-    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
-}
-
-.submit_btn.active {
-    background-color: rgb(217,217,217,0.3);
-}
-
-.remove_content {
-    display: none;
+button {
     border: 1px solid rgb(0, 0, 0, 0.3);
     font-size: 18px;
     font-weight: bold;
@@ -149,6 +143,8 @@ textarea {
     box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
 }
 
-.remove_content.active {
-    display: block;
+.date {
+    margin-top: 50px;
+    font-size: 10px;
+    color: #999999;
 }

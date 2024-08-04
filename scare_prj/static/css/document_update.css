@@ -17,15 +17,9 @@ body {
     margin: 0;
     margin-top: 33px;
     border: 1px solid black;
+
 }
 
-input {
-    outline: none;
-}
-
-textarea {
-    outline: none;
-}
 
 .title {
     width: 100%;
@@ -151,4 +145,12 @@ textarea {
 
 .remove_content.active {
     display: block;
+}
+
+input {
+    outline: none;
+}
+
+textarea {
+    outline: none;
 }

@@ -4,17 +4,24 @@
       format("woff");
     font-weight: normal;
     font-style: normal;
-  }
+}
+  
+* {
+    font-family: "NanumBarunpen";
+    -webkit-touch-callout: none;
+}
 
 body {
     width: 375px;
     height: 812px;
     margin: 0;
     margin-top: 33px;
+    border: 1px solid black;
 }
 
 input {
     font-size: 15px;
+    outline: none;
     height: 19px;
     border: none;
 }
@@ -60,7 +67,6 @@ input {
 .checklist_title {
     width: 300px;
     height: 20px;
-    border: 1px solid black;
     font-size: 16px;
     font-weight: bold;
 }
