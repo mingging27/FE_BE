@@ -4,14 +4,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static "css/result1.css" %}">
+    <link rel="stylesheet" href="{% static "css/result2.css" %}">
     <title>Document</title>
   </head>
   <body>
     {% if matchings %}
     <header>
       <a href="{{request.META.HTTP_REFERER|escape}}"><img src="{% static "img/back.png" %}" /></a>
-      <div class="search_content">진료</div>
+      <div class="search_content">{{ entered_text }}</div>
     </header>
 
     <section>
@@ -32,7 +32,12 @@
     </section>
 
     {% else %}
-    <h2>{{ entered_text }}</h2>
-    검색 결과가 없습니다. {% endif %}
+    <header>
+      <a href="{{request.META.HTTP_REFERER|escape}}"><img src="{% static "img/back.png" %}" /></a>
+      <div class="search_content">{{ entered_text }}</div>
+    </header>
+
+    <div class="no_content">검색 결과가 없습니다.</div>
+    {% endif %}
   </body>
 </html>
