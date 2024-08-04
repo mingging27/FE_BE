@@ -11,10 +11,10 @@
 
 <body>
     <div class="title">
-        <img src="{% static 'images/Logo.png' %}" alt="효담 로고" width="35" height="35" class="back">
+        <img src="{% static 'img/Logo.png' %}" alt="효담 로고" width="35" height="35">
         <div>
-            <a href="{%url 'record:home'%}"><img src="{% static 'images/Vector.png' %}" width="20.16"
-                    height="18.71"></a>
+            <a href="{%url 'record:home'%}" class="back">
+                <img src="{% static 'img/back-btn.png' %}" width="20.16" height="18.71"></a>
             <h3>기록 생성</h3>
         </div>
     </div>
@@ -27,10 +27,10 @@
             <div class="file_submit">
                 <input type="file" class="fileInput" value="이미지" id="fileInput">
                 <label class="fileInputLabel" id="fileInputLabel">
-                    <img src="{% static 'images/Imgupload.png' %}" alt="Upload Icon" width="30" height="30">
+                    <img src="{% static 'img/Imgload.png' %}" alt="Upload Icon" width="30" height="30">
                 </label>
                 <div class="btn_div">
-                    <button type="reset" class="remove_content" id="remove_content">삭제</button><!--이건...?-->
+                    <button type="reset" class="remove_content" id="remove_content">삭제</button>
                     <button type="submit" value="작성" class="submit_btn">완료</button>
                 </div>
             </div>
