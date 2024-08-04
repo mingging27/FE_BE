@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static "css/gearing1.css" %}">
+    <link rel="stylesheet" href="{% static "css/gearing3.css" %}">
     <title>효담 - 연동하기</title>
     <style>
       /* 기본적인 모달 스타일 */
@@ -85,7 +85,7 @@
       <li class="list_o">
         <div class="applyLine">
           <img src="{% static "img/o.png"%}" />
-          <div>{{ searched_user.nickname }}</div>
+          <div class="name">{{ searched_user.nickname }}</div>
         </div>
         
         <form class="link-account-form" action="{% url 'accounts:link_account' searched_user.id %}" method="post">
@@ -108,8 +108,10 @@
       {% for follower in followers %}
       <li>
         <div class="list_o">
+          <div class="delLine">
             <img src="{% static "img/o.png"%}" />
             <div class="name">{{ follower.nickname }}</div>
+          </div>
         </div>
         <form class="unfollow-form" action="{% url 'accounts:unfollow' follower.id %}" method="post">
           {% csrf_token %}
@@ -126,12 +128,15 @@
 
 
     <!-- 모달 -->
-    <div id="notification-modal" class="modal">
+    <div class="modal_po">
+      <div id="notification-modal" class="modal">
       <div class="modal-content">
         <p id="notification-message"></p>
         <button id="notification-confirm">확인</button>
       </div>
     </div>
+    </div>
+    
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
