@@ -41,12 +41,3 @@ class Follow(models.Model):
 
     def __str__(self):
         return f'{self.from_user} -> {self.to_user} ({self.status})'
-
-# mp3 관련
-class AudioFile(models.Model):
-    audio_title = models.CharField(max_length=100, null=True, blank=True)
-    audio_file = models.FileField(upload_to='audio_files/', null=True, blank=True)
-    uploaded_at = models.DateTimeField(auto_now_add=True, null=True)
-
-    def __str__(self):
-        return self.title
