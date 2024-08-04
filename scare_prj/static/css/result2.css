@@ -44,6 +44,9 @@ header img {
   &:hover {
     cursor: pointer;
   }
+
+  position: relative;
+  top: 3px;
 }
 
 .search_result {
@@ -95,4 +98,8 @@ header img {
   font-size: 10px;
   color: #000000;
   opacity: 60%;
+}
+
+.no_content {
+  margin: 15px;
 }

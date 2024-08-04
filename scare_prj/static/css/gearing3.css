@@ -199,3 +199,17 @@ p {
   flex-direction: row;
   align-items: center;
 }
+
+.delLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 7px;
+}
+
+.modal_po {
+  width: 355px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
