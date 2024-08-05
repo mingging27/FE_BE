@@ -11,16 +11,18 @@
 </head>
 
 <body>
-    <div class="title">
-        <a href=" {% url 'checklist:home' %}"><img src="{% static 'img/back-btn.png' %}" alt="뒤로가기" width="20.16"
-                height="18.71"></a>
-        <h3>체크리스트 생성</h3>
-    </div>
-
     <div class="content">
+        <div class="title">
+            <a href=" {% url 'checklist:home' %}"><img src="{% static 'img/back-btn.png' %}" alt="뒤로가기" width="20.16"
+                    height="18.71"></a>
+            <h3>체크리스트 생성</h3>
+        </div>
+
         <form method="post" class="create_form">
             {% csrf_token %}
-            <input type="text" placeholder="제목을 입력하세요." required id="id_title" class="checklist_title">
+            {{ form.as_p }}
+
+            <!-- <input type="text" placeholder="제목을 입력하세요." required id="id_title" class="checklist_title">
             <div class="date_div">
                 <h4 class="subtitle">날짜</h4>
                 <input type="date" name="title" id="id_due_date" name="due_date" id="" class="date">
@@ -59,7 +61,7 @@
                     <input type="checkbox" name="sun" value="sun">
                     <label for="sun">일</label>
                 </div>
-            </div>
+            </div> -->
             <button type="submit" class="submit_btn">완료</button>
         </form>
     </div>

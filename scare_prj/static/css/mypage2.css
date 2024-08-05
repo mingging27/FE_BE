@@ -73,7 +73,7 @@ section {
 
 a {
   text-decoration: none;
-  padding: 20px 10px;
+  padding: 20px;
   border-bottom: 3px solid rgba(201, 153, 249, 0.5);
   font-size: 16px;
   font-weight: 700;
@@ -86,18 +86,22 @@ a {
   margin-top: 30px;
 }
 
+.nav_po {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
 .bottom-navigation {
   align-items: flex-start !important;
   background-color: #ffffff;
   border-radius: 0;
   border-top: 1.5px solid #e1e1e1 !important;
   width: 375px;
-  bottom: 0;
+
+  height: 80px;
   display: flex;
-  height: 3.4rem;
-  padding: 12px 0;
-  position: fixed;
-  z-index: 10;
+  margin-top: 32px;
 }
 
 .nav-menu {
@@ -106,8 +110,8 @@ a {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0;
-  border: 0;
+  font-weight: 700;
+  border: none;
 }
 
 .nav-menu .menu {
@@ -115,7 +119,6 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 0.125rem;
-  
 }
 
 .nav-menu .menu .icon {
