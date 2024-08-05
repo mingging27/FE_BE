@@ -25,13 +25,15 @@
                 <input type="text" name="title" class="text_title" placeholder="제목을 입력해 주세요." id="text_title">
                 <textarea class="text_content" name="content" placeholder="내용을 작성해 주세요." id="text_content"></textarea>
             </div>
+            <div>
+                <img id="image-preview" src="" alt="Image Preview"
+                    style="max-width: 300px; max-height: 300px; display: none;">
+            </div>
             <div class="file_submit">
-                {%if record.image%}
-                <img src="{{record.image.url}}">
-                {%endif%}
-                <input type="file" class="fileInput" name="image" value="이미지" id="fileInput">
-                <label class="fileInputLabel" id="fileInputLabel">
-                    <img src="{% static 'img/Imgload.png' %}" alt="Upload Icon" width="30" height="30">
+                <input type="file" class="fileInput" name="image" id="fileInput" accept="image/*"
+                    style="display: none;">
+                <label for="fileInput" class="fileInputLabel" id="fileInputLabel">
+                    <img src="{% static 'img/Imgload.png' %}" alt="Upload Icon" width="30" height="30" class="img_btn">
                 </label>
                 <div class="btn_div">
                     <button type="reset" class="remove_content" id="remove_content">삭제</button>
@@ -45,6 +47,18 @@
             document.getElementById('fileInput').click();
         });
 
+        document.getElementById('fileInput').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const preview = document.getElementById('image-preview');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
 
         const textInput = document.getElementById('text_title');
         const textArea = document.getElementById('text_content');

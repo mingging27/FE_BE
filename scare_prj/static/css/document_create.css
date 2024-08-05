@@ -16,6 +16,7 @@ body {
     height: 812px;
     margin: 0;
     border: 1px solid black;
+    position: relative;
 }
 
 input {
@@ -30,6 +31,7 @@ textarea {
     width: 100%;
     height: 93px;
     display: flex;
+    margin-top: 46px;
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid black;
@@ -92,7 +94,7 @@ textarea {
     margin-top: 15px;
     border: none;
     width: 330px;
-    height: 500px;
+    height: 300px;
     vertical-align: top;
     resize: none;
     overflow: hidden;
@@ -118,6 +120,16 @@ textarea {
 
 .btn_div {
     display: flex;
+    position: absolute;
+    right:33px;
+    bottom: 19px;
+}
+
+.img_btn {
+    display: flex;
+    position: absolute;
+    left:33px;
+    bottom: 21px;
 }
 
 .submit_btn {

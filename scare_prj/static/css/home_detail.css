@@ -90,23 +90,18 @@ nav .nav-title .date {
   margin-left: 15px;
 }
 
-.nav_po {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-}
-
 .bottom-navigation {
   align-items: flex-start !important;
   background-color: #ffffff;
   border-radius: 0;
   border-top: 1.5px solid #e1e1e1 !important;
-  padding: 12px 0;
   width: 375px;
+  bottom: 0;
   display: flex;
-
-  position: relative;
-  top: 70px;
+  height: 3.4rem;
+  padding: 12px 0;
+  position: fixed;
+  z-index: 10;
 }
 
 .nav-menu {
@@ -135,9 +130,94 @@ nav .nav-title .date {
 }
 
 .container-schedule .schedule {
-  background-color: rgb(255, 255, 255);
-  height: 400px;
+  background-color: white;
+  background-clip: content-box;
   padding: 10px 0;
+}
+
+.divider {
+  border: 1px solid #e4e4e4;
+  padding: 0px;
+  margin: 5px 0 10px 0;
+}
+
+.plan-date {
+  padding: 10px 0 10px 0;
+  font-weight: bold;
+}
+
+.planner {
+  position: relative;
+  padding: 0 20px 0 20px;
+}
+
+.plan-group {
+  padding: 10px 0 0 0;
+}
+
+.plan-group .titlebar {
+  background-color: rgb(146, 146, 146);
+  background-clip: content-box;
+  height: 40px;
+  width: 6px;
+  border-radius: 3px;
+  padding-right: 5px;
+  float: left;
+}
+
+.plan-group .plan-txt {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.plan-group .plan-txt .time {
+  font-size: smaller;
+  color: #aaaaaa;
+}
+
+.add-btsn {
+  cursor: pointer;
+  float: right;
+  width: 45px;
+  height: 45px;
+  background: url(../img/add-btn.png) center no-repeat;
+  background-clip: content-box;
+  border: 1px solid #aaaaaa;
+  border-radius: 50%;
+}
+
+.add-btn {
+  position: absolute;
+  right: 13px;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  border: 1px solid #aaaaaa;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.add-btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #aaaaaa;
+  height: 50%;
+  width: 3px;
+}
+
+.add-btn:after {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 3px;
+  width: 50%;
+  background: #aaaaaa;
+  top: 50%;
+  left: 50%;
 }
 
 .dayoff {
@@ -154,6 +234,18 @@ thead th:first-child {
 
 thead th:last-child {
   color: #1a55ee; /* 토요일 색상 */
+}
+
+.previous-month {
+  opacity: 0.8;
+}
+
+thead th {
+  padding: 10px 22px 5px 10px;
+}
+
+td {
+  padding: 10px 22px 7px 10px;
 }
 
 thead th {
@@ -174,46 +266,55 @@ td {
 
 .date-container {
   text-align: center;
-  margin-bottom: 2px; /* 날짜와 일정 제목 사이의 간격 조정 */
+  margin-bottom: 2px;
   width: 50px;
 }
 
 .schedule-container {
-  margin-top: 5px; /* 날짜와 일정 제목 사이의 간격 조정 */
-  height: 66px;
+  margin-top: 5px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1px;
 }
 
 .schedule-item {
-  font-size: 10px; /* 일정 제목 크기 조정 */
-  background-color: aquamarine;
-  margin: 2px 0;
-  border-radius: 5px;
-  width: 50px;
-  color: #000; /* 일정 제목 색상 조정 */
-  text-align: center; /* 일정 제목을 중앙 정렬 */
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+  color: #000;
+  text-align: center;
 }
 
-.schedule-item {
-  font-size: 10px; /* 일정 제목 크기 조정 */
-  margin: 2px 0;
-  border-radius: 5px;
-  width: 50px;
-  color: #000; /* 일정 제목 색상 조정 */
-  text-align: center; /* 일정 제목을 중앙 정렬 */
-}
-
-.schedule-item.입원 {
+.plan-group.입원 .titlebar {
   background-color: #baeeff; /* 입원일 경우 색상 */
 }
 
-.schedule-item.수술 {
+.plan-group.수술 .titlebar {
   background-color: #ffb6c1; /* 수술일 경우 색상 */
 }
 
-.schedule-item.처방 {
+.plan-group.처방 .titlebar {
   background-color: #daffda; /* 처방일 경우 색상 */
 }
 
-.schedule-item.진료 {
+.plan-group.진료 .titlebar {
   background-color: #ffffa5; /* 진료일 경우 색상 */
+}
+
+.schedule-item.입원 {
+  color: #baeeff; /* 입원일 경우 색상 */
+}
+
+.schedule-item.수술 {
+  color: #ffb6c1; /* 수술일 경우 색상 */
+}
+
+.schedule-item.처방 {
+  color: #daffda; /* 처방일 경우 색상 */
+}
+
+.schedule-item.진료 {
+  color: #ffffa5; /* 진료일 경우 색상 */
 }

@@ -15,6 +15,7 @@ body {
     width: 375px;
     height: 812px;
     border: 1px solid black;
+    overflow: hidden;
 }
 
 .title {
@@ -22,6 +23,7 @@ body {
     display: flex;
     align-items: center;
     margin: 0 auto;
+    margin-top: 46px;
     border-bottom: 1px solid black;
     padding-bottom: 12px;
 }
@@ -42,26 +44,20 @@ body {
 .notifiction {
     display: flex;
     align-items: center;
-    margin-left: 21px;
     margin-top: 21px;
 }
 
 .notification_text {
-    margin-left: 21px;
+    margin-left: 14px;
 }
 
-.notification_text p {
+.notification_text p{
     margin: 0;
 }
 
 .new_title, .past_title {
     font-size: 16px;
     font-weight: bold;
-}
-
-.past_title {
-    margin-left: 21px;
-
 }
 
 .time {
@@ -74,6 +70,6 @@ body {
     margin-top: 28px;
 }
     
-.content {
+.noti_content {
     margin-left: 19px;
 }

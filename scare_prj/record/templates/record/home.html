@@ -1,38 +1,28 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ko">
-<<<<<<< HEAD
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document_main</title>
-    <link rel="stylesheet" href="{% static 'css/document_main.css' %}">
-</head>
-=======
-  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document_main</title>
     <link rel="stylesheet" href="{% static 'css/document_main.css' %}" />
-  </head>
->>>>>>> 2191dfe37640b6b3e6337f80caed5283b8e6ff2e
+</head>
 
-  <body>
+<body>
     <div class="content">
-<<<<<<< HEAD
-        <header><img src="{% static "img/logo.png"%}" /></header>
-=======
-        <header><img src="{% static 'img/Logo.png' %}" /></header>
->>>>>>> 2191dfe37640b6b3e6337f80caed5283b8e6ff2e
-
+        <div class="title">
+            <img src="{% static 'img/Logo.png' %}" alt="효담 로고" width="35" height="35">
+        </div>
         <div class="post_wrap">
             {% for record in records %}
             <div class="post">
                 <h3 class="post_title"><a href="{%url 'record:detail' record.id %}">{{ record.title }}</a></h3>
                 <p class="post_content">{{record.content}}</p>
                 {%if record.image %}
-                <img src="{{record.image.url}}" width="130">
+                <div class="img_div">
+                    <img src="{{record.image.url}}" width="130">
+                </div>
                 {%endif%}
                 <p class="date">{{record.created_at|date:"Y.m.d"}}</p>
             </div>
@@ -42,60 +32,31 @@
     </div>
     <!-- nav bar -->
     <div class="bottom-navigation">
-        <a class="nav-menu" href="{% url 'cal:home' %}">
+        <a class="nav-menu" href="/cal/home/">
             <div class="menu">
-                <img class="icon" src="{% static 'img/nav-01home_gray.png' %}" />
+                <img class="icon" src="/static/img/nav-01home.png">
                 <span>홈</span>
             </div>
         </a>
-        <a class="nav-menu" href="{% url 'checklist:home' %}">
+        <a class="nav-menu" href="/checklist/">
             <div class="menu">
-                <img class="icon" src="{% static 'img/nav-02checklist.png' %}" />
+                <img class="icon" src="/static/img/nav-02checklist.png">
                 <span>체크리스트</span>
             </div>
         </a>
-        <a class="nav-menu" href="{% url 'record:home' %}">
+        <a class="nav-menu" href="/record/">
             <div class="menu">
-                <img class="icon" src="{% static 'img/nav-03memo_pur.png' %}" />
+                <img class="icon" src="/static/img/nav-03memo.png">
                 <span>기록</span>
             </div>
         </a>
-        <a class="nav-menu" href="{% url 'accounts:mypage' %}">
+        <a class="nav-menu" href="/mypage/">
             <div class="menu">
-                <img class="icon" src="{% static 'img/nav-04mypage.png' %}" />
+                <img class="icon" src="/static/img/nav-04mypage.png">
                 <span>마이페이지</span>
             </div>
         </a>
     </div>
 </body>
 
-    <div class="nav_po">
-      <div class="bottom-navigation">
-        <a class="nav-menu" href="{% url 'cal:home' %}">
-          <div class="menu">
-            <img class="icon" src="{% static 'img/nav-01home_gray.png' %}" />
-            <span>홈</span>
-          </div>
-        </a>
-        <a class="nav-menu" href="{% url 'checklist:home' %}">
-          <div class="menu">
-            <img class="icon" src="{% static 'img/nav-02checklist_pur.png' %}" />
-            <span>체크리스트</span>
-          </div>
-        </a>
-        <a class="nav-menu" href="{% url 'record:home' %}">
-          <div class="menu">
-            <img class="icon" src="{% static 'img/nav-03memo.png' %}" />
-            <span>기록</span>
-          </div>
-        </a>
-        <a class="nav-menu" href="{% url 'accounts:mypage' %}">
-          <div class="menu">
-            <img class="icon" src="{% static 'img/nav-04mypage.png' %}" />
-            <span>마이페이지</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </body>
 </html>

@@ -25,7 +25,7 @@
             <div class="text_content">
                 <p>{{record.content}}</p>
                 {%if record.image %}
-                <img src="{{record.image.url}}">
+                <img src="{{record.image.url}}" width="343">
                 {%endif%}
                 <p class="date">{{record.created_at|date:"Y.m.d"}}</p><br>
             </div>
