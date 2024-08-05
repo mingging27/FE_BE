@@ -1,6 +1,7 @@
 @font-face {
   font-family: "NanumBarunpen";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff") format("woff");
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -91,23 +92,18 @@ nav .nav-title .date {
   margin-left: 15px;
 }
 
-.nav_po {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-}
 
 .bottom-navigation {
   align-items: flex-start !important;
   background-color: #ffffff;
   border-radius: 0;
   border-top: 1.5px solid #e1e1e1 !important;
-  padding: 12px 0;
   width: 375px;
+  bottom: 0;
   display: flex;
-
-  position: relative;
-  top: 70px;
+  height: 3.4rem;
+  padding-top: 12px;
+  z-index: 10;
 }
 
 .nav-menu {
@@ -135,6 +131,7 @@ nav .nav-title .date {
   font-size: 12px;
 }
 
+
 .container-schedule .schedule {
   background-color: rgb(255, 255, 255);
   padding: 20px 0;
@@ -156,6 +153,7 @@ thead th:last-child {
   color: #1a55ee; /* 토요일 색상 */
 }
 
+
 thead th {
   padding: 0;
 }
@@ -164,6 +162,7 @@ table {
   width: 100%;
   font-size: 13px;
 }
+
 
 /* 날짜와 일정 제목 구분 */
 td {
@@ -174,7 +173,7 @@ td {
 
 .date-container {
   text-align: center;
-  margin-bottom: 2px; /* 날짜와 일정 제목 사이의 간격 조정 */
+  margin-bottom:2px; /* 날짜와 일정 제목 사이의 간격 조정 */
   width: 50px;
 }
 

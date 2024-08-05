@@ -99,8 +99,7 @@ nav .nav-title .date {
   bottom: 0;
   display: flex;
   height: 3.4rem;
-  padding: 12px 0;
-  position: fixed;
+  padding-top: 12px;
   z-index: 10;
 }
 
@@ -129,6 +128,7 @@ nav .nav-title .date {
   font-size: 12px;
 }
 
+
 .container-schedule .schedule {
 
   background-clip: content-box;
@@ -151,6 +151,7 @@ nav .nav-title .date {
 .planner {
   position: relative;
   padding: 5px 20px 10px 20px;
+  height: 320px;
 }
 
 .plan-group {
@@ -171,6 +172,9 @@ nav .nav-title .date {
   display: flex;
   flex-direction: column;
   align-items: left;
+}
+
+.plan-group .plan-txt .title {
 }
 
 .plan-group .plan-txt .time {
@@ -253,6 +257,7 @@ td {
   padding: 10px 22px 7px 10px;
 }
 
+
 thead th {
   padding: 0;
 }
@@ -261,6 +266,7 @@ table {
   width: 100%;
   font-size: 13px;
 }
+
 
 /* 날짜와 일정 제목 구분 */
 td {
@@ -271,25 +277,25 @@ td {
 
 .date-container {
   text-align: center;
-  margin-bottom: 2px;
+  margin-bottom:2px; 
   width: 50px;
 }
 
 .schedule-container {
   margin-top: 5px;
   height: 22px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: flex; 
+  justify-content: center; 
+  flex-wrap: wrap; 
   gap: 1px;
 }
 
 .schedule-item {
-  font-size: 16px;
+  ont-size: 16px;
   line-height: 1;
   padding: 0;
-  color: #000;
-  text-align: center;
+  color: #000; 
+  text-align: center; 
 }
 
 .plan-group.입원 .titlebar {
@@ -307,6 +313,7 @@ td {
 .plan-group.진료 .titlebar {
   background-color: #ffffa5; /* 진료일 경우 색상 */
 }
+
 
 .schedule-item.입원 {
   color: #baeeff; /* 입원일 경우 색상 */

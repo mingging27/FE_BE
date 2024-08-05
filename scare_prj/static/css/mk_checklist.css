@@ -17,8 +17,6 @@ body {
     margin: 0;
     margin-top: 33px;
     border: 1px solid black;
-    position: relative;
-    font-size: 15px;
 }
 
 input {
@@ -29,12 +27,7 @@ input {
 }
 
 .content {
-    margin: 19px 0 0 0;
-}
-
-.create_form {
-    margin-left: 31px;
-    margin-top: 19px;
+    margin: 19px 0 0 31px;
 }
 
 .title {
@@ -42,7 +35,6 @@ input {
     display: flex;
     align-items: center;
     margin: 0 auto;
-    margin-top: 46px;
     border-bottom: 1px solid black;
     padding-bottom: 12px;
 }
@@ -72,17 +64,27 @@ input {
     border-radius: 5px;
 }
 
-#id_title {
+.checklist_title {
     width: 300px;
     height: 20px;
     font-size: 16px;
     font-weight: bold;
 }
 
-p {
-    margin-bottom: 23px;
+.date_div, .time_div {
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
 
+.date_div {
+    margin-bottom: 30px;
+    margin-top: 23px;
+}
+
+.time_div {
+    margin-bottom: 23px;
+}
 
 
 .repeat {
@@ -116,9 +118,7 @@ p {
     background-color: white;
     border-radius: 5px;
     padding: 6px 21px;
-        display: flex;
-        position: absolute;
-        right:33px;
-        bottom: 19px;
+    margin-top: 238px;
+    margin-left: 257px;
     box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
 }
