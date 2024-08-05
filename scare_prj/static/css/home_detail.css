@@ -95,7 +95,7 @@ nav .nav-title .date {
   background-color: #ffffff;
   border-radius: 0;
   border-top: 1.5px solid #e1e1e1 !important;
-  width: 100%;
+  width: 375px;
   bottom: 0;
   display: flex;
   height: 3.4rem;
@@ -110,6 +110,7 @@ nav .nav-title .date {
   align-items: center;
   justify-content: center;
   width: 100%;
+  font-weight: 700;
 }
 
 .nav-menu .menu {
@@ -128,15 +129,12 @@ nav .nav-title .date {
   font-size: 12px;
 }
 
-.container-schedule {
-  padding: 0 20px 0 20px;
-}
 
 .container-schedule .schedule {
   background-color: white;
   background-clip: content-box;
-  padding: 0 0 10px 0;
-  height: 240px;
+  padding: 10px 0;
+
 }
 
 .divider {
@@ -152,7 +150,7 @@ nav .nav-title .date {
 
 .planner {
   position: relative;
-  padding: 0 0 10px 0;
+  padding: 0 20px 0 20px;
 }
 
 .plan-group {
@@ -160,10 +158,11 @@ nav .nav-title .date {
 }
 
 .plan-group .titlebar {
-  background-color: orange;
+  background-color: rgb(146, 146, 146);
   background-clip: content-box;
   height: 40px;
-  width: 4px;
+  width: 6px;
+  border-radius: 3px;
   padding-right: 5px;
   float: left;
 }
@@ -195,7 +194,7 @@ nav .nav-title .date {
 
 .add-btn {
   position: absolute;
-  right: 1px;
+  right: 13px;
   width: 35px;
   height: 35px;
   background: #fff;
@@ -252,4 +251,78 @@ thead th {
 
 td {
   padding: 10px 22px 7px 10px;
+}
+
+
+thead th {
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  font-size: 13px;
+}
+
+
+/* 날짜와 일정 제목 구분 */
+td {
+  position: relative; /* 날짜와 일정을 포함할 영역을 상대 위치로 설정 */
+  padding: 1px; /* 필요한 여백 추가 */
+  vertical-align: top; /* 날짜가 상단에 위치하도록 설정 */
+}
+
+.date-container {
+  text-align: center;
+  margin-bottom:2px; 
+  width: 50px;
+}
+
+.schedule-container {
+  margin-top: 5px;
+  height: 22px;
+  display: flex; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+  gap: 1px;
+}
+
+.schedule-item {
+  ont-size: 16px;
+  line-height: 1;
+  padding: 0;
+  color: #000; 
+  text-align: center; 
+}
+
+.plan-group.입원 .titlebar {
+  background-color: #baeeff; /* 입원일 경우 색상 */
+}
+
+.plan-group.수술 .titlebar {
+  background-color: #ffb6c1; /* 수술일 경우 색상 */
+}
+
+.plan-group.처방 .titlebar {
+  background-color: #daffda; /* 처방일 경우 색상 */
+}
+
+.plan-group.진료 .titlebar {
+  background-color: #ffffa5; /* 진료일 경우 색상 */
+}
+
+
+.schedule-item.입원 {
+  color: #baeeff; /* 입원일 경우 색상 */
+}
+
+.schedule-item.수술 {
+  color: #ffb6c1; /* 수술일 경우 색상 */
+}
+
+.schedule-item.처방 {
+  color: #daffda; /* 처방일 경우 색상 */
+}
+
+.schedule-item.진료 {
+  color: #ffffa5; /* 진료일 경우 색상 */
 }
