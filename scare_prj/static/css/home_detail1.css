@@ -90,6 +90,12 @@ nav .nav-title .date {
   margin-left: 15px;
 }
 
+.nav_po {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
 .bottom-navigation {
   align-items: flex-start !important;
   background-color: #ffffff;

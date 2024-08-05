@@ -20,6 +20,7 @@
     <div class="content">
         <form method="post" class="create_form">
             {% csrf_token %}
+<<<<<<< HEAD
             <input type="text" placeholder="제목을 입력하세요." required id="id_title" class="checklist_title">
             <div class="date_div">
                 <h4 class="subtitle">날짜</h4>
@@ -60,6 +61,9 @@
                     <label for="sun">일</label>
                 </div>
             </div>
+=======
+            {{ form.as_p }}
+>>>>>>> 2191dfe37640b6b3e6337f80caed5283b8e6ff2e
             <button type="submit" class="submit_btn">완료</button>
         </form>
     </div>
