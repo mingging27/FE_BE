@@ -15,11 +15,12 @@ button + label:hover {
 
 body {
   width: 375px;
-  height: 779px;
+  height: 812px;
   padding: 33px 0 0;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 header {
