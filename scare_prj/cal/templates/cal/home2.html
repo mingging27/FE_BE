@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static './css/home_detail.css' %}" />
+    <link rel="stylesheet" href="{% static './css/home_detail1.css' %}" />
     <title>Document</title>
   </head>
   <body>
@@ -30,44 +30,40 @@
     <!-- 달력 -->
     <div class="container-schedule">
       <div class="schedule">
-          <table class="month">
-              <thead>
-                  <tr>
-                      <th>일</th>
-                      <th>월</th>
-                      <th>화</th>
-                      <th>수</th>
-                      <th>목</th>
-                      <th>금</th>
-                      <th>토</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {% for row in cal_rows %}
-                  <tr>
-                      {% for day, cls in row %}
-                      <td class="{{ cls }}">
-                          <!-- 날짜 부분 -->
-                          <div class="date-container">
-                              <a href="{% url 'cal:home2' year month day %}">{{ day }}</a>
-                          </div>
+        <table class="month">
+          <thead>
+            <tr>
+              <th>일</th>
+              <th>월</th>
+              <th>화</th>
+              <th>수</th>
+              <th>목</th>
+              <th>금</th>
+              <th>토</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in cal_rows %}
+            <tr>
+              {% for day, cls in row %}
+              <td class="{{ cls }}">
+                <!-- 날짜 부분 -->
+                <div class="date-container">
+                  <a href="{% url 'cal:home2' year month day %}">{{ day }}</a>
+                </div>
 
-                          <!-- 일정 부분 -->
-                          <div class="schedule-container">
-                              {% with day_schedules=month_schedules|dictsort:"date" %}
-                                  {% for i in day_schedules %}
-                                      {% if i.date.day == day %}
-                                          <div class="schedule-item {{ i.related_words|lower }}">●</div>
-                                      {% endif %}
-                                  {% endfor %}
-                              {% endwith %}
-                          </div>
-                      </td>
-                      {% endfor %}
-                  </tr>
-                  {% endfor %}
-              </tbody>
-          </table>
+                <!-- 일정 부분 -->
+                <div class="schedule-container">
+                  {% with day_schedules=month_schedules|dictsort:"date" %} {% for i in day_schedules %} {% if i.date.day == day %}
+                  <div class="schedule-item {{ i.related_words|lower }}">●</div>
+                  {% endif %} {% endfor %} {% endwith %}
+                </div>
+              </td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
 
       <div class="divider"></div>
@@ -80,7 +76,8 @@
             <div class="plan-txt" onclick="saveTitle(this)">
               <a href="{% url 'cal:update_schedule' schedule.id %}">
                 <span class="title">{{ schedule.title }}<br /></span>
-                <span class="time">{{ schedule.formatted_time }}</span></a>
+                <span class="time">{{ schedule.formatted_time }}</span></a
+              >
             </div>
           </div>
           {% empty %} 일정 없음<br /><br />
@@ -91,33 +88,34 @@
         <div class="add-btn"></div>
       </a>
     </div>
-    
-    <!-- nav bar -->
-    <div class="bottom-navigation">
-      <a class="nav-menu" href="{% url 'cal:home' %}">
-        <div class="menu">
-          <img class="icon" src="{% static 'img/nav-01home.png' %}" />
-          <span>홈</span>
-        </div>
-      </a>
-      <a class="nav-menu" href="{% url 'checklist:home' %}">
-        <div class="menu">
-          <img class="icon" src="{% static 'img/nav-02checklist.png' %}" />
-          <span>체크리스트</span>
-        </div>
-      </a>
-      <a class="nav-menu" href="{% url 'record:home' %}">
-        <div class="menu">
-          <img class="icon" src="{% static 'img/nav-03memo.png' %}" />
-          <span>기록</span>
-        </div>
-      </a>
-      <a class="nav-menu" href="{% url 'accounts:mypage' %}">
-        <div class="menu">
-          <img class="icon" src="{% static 'img/nav-04mypage.png' %}" />
-          <span>마이페이지</span>
-        </div>
-      </a>
+
+    <div class="nav_po">
+      <div class="bottom-navigation">
+        <a class="nav-menu" href="{% url 'cal:home' %}">
+          <div class="menu">
+            <img class="icon" src="{% static 'img/nav-01home_gray.png' %}" />
+            <span>홈</span>
+          </div>
+        </a>
+        <a class="nav-menu" href="{% url 'checklist:home' %}">
+          <div class="menu">
+            <img class="icon" src="{% static 'img/nav-02checklist_pur.png' %}" />
+            <span>체크리스트</span>
+          </div>
+        </a>
+        <a class="nav-menu" href="{% url 'record:home' %}">
+          <div class="menu">
+            <img class="icon" src="{% static 'img/nav-03memo.png' %}" />
+            <span>기록</span>
+          </div>
+        </a>
+        <a class="nav-menu" href="{% url 'accounts:mypage' %}">
+          <div class="menu">
+            <img class="icon" src="{% static 'img/nav-04mypage.png' %}" />
+            <span>마이페이지</span>
+          </div>
+        </a>
+      </div>
     </div>
     <script src="{% static './js/home.js' %}"></script>
   </body>

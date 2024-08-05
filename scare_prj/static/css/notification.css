@@ -14,7 +14,6 @@
 body {
     width: 375px;
     height: 812px;
-    margin-top: 33px;
     border: 1px solid black;
     overflow: hidden;
 }
