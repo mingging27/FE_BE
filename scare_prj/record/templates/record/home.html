@@ -5,13 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document_main</title>
-    <link rel="stylesheet" href="{% static 'css/document_main2.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/document_main3.css' %}" />
   </head>
 
   <body>
     <div class="content">
       <div class="title">
         <img src="{% static 'img/Logo.png' %}" alt="효담 로고" width="35" height="35" />
+        <a href="{%url 'record:create' %}"><img src="{% static 'img/+.png' %}" class="plus" height="30" /></a>
       </div>
       <div class="post_wrap">
         {% for record in records %}
@@ -27,11 +28,9 @@
         </div>
         {% empty %} 작성된 기록이 없습니다.{% endfor %}
       </div>
-      <a href="{%url 'record:create' %}"><img src="{% static 'img/+.png' %}" class="plus" height="30" /></a>
     </div>
     <!-- nav bar -->
     <div class="bottom-navigation">
-
       <a class="nav-menu" href="{% url 'cal:home' %}">
         <div class="menu">
           <img class="icon" src="{% static 'img/nav-01home_gray.png' %}" />
