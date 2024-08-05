@@ -16,10 +16,7 @@ body {
   width: 335px;
   height: 812px;
   border: 1px solid black;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  margin: 0;  
 }
 
 header {
@@ -122,8 +119,15 @@ label {
 }
 
 .plus {
-  width: 25px;
-  height: 25px;
+
+
+  position: absolute;
+  left: 324px;
+  bottom: 92px;
+  width: 35px;
+  height: 35px;
+  
+  cursor: pointer;
 }
 
 .addCl {
@@ -183,4 +187,8 @@ a {
 
 .nav-menu .menu span {
   font-size: 12px;
+}
+
+.checklist-page {
+  padding: 0 20px;
 }

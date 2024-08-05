@@ -15,9 +15,15 @@ body {
     width: 375px;
     height: 812px;
     margin: 0;
-    margin-top: 33px;
     border: 1px solid black;
     position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-top: 33px;
+    margin-bottom: 30px;
 }
 
 .title {

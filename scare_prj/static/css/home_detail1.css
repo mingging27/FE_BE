@@ -22,9 +22,9 @@ a {
 
 body {
   width: 375px;
-  height: 667px;
-  margin: 0;
+  height: 812px;
   border: 1px solid black;
+  margin: 0;
 }
 
 nav {
@@ -135,9 +135,11 @@ nav .nav-title .date {
 }
 
 .container-schedule .schedule {
-  background-color: white;
+
   background-clip: content-box;
-  padding: 10px 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
+
 }
 
 .divider {
@@ -153,7 +155,7 @@ nav .nav-title .date {
 
 .planner {
   position: relative;
-  padding: 0 20px 0 20px;
+  padding: 5px 20px 10px 20px;
 }
 
 .plan-group {
@@ -193,8 +195,11 @@ nav .nav-title .date {
 }
 
 .add-btn {
+  
   position: absolute;
-  right: 13px;
+  left: 324px;
+  bottom: 92px;
+
   width: 35px;
   height: 35px;
   background: #fff;
