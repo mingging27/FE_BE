@@ -87,9 +87,10 @@
           {% endfor %}
         </div>
       </div>
-      <a href="{% url 'cal:add_schedule' year month selected_day %}">
-        <div class="add-btn"></div>
-      </a>
+    </div>
+
+    <div class="addCl">
+      <a href="{% url 'cal:add_schedule' year month selected_day  %}"> <img src="{% static "img/+.png"%}" class="plus" /></a>
     </div>
     
     <!-- nav bar -->

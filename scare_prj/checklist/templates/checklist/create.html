@@ -3,27 +3,27 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mk_checklist</title>
-    <link rel="stylesheet" href="CSS/mk_checklist.css">
-    <link rel="stylesheet" href="{% static 'css/mk_checklist.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mk_checklist</title>
+  <link rel="stylesheet" href="CSS/mk_checklist.css">
+  <link rel="stylesheet" href="{% static 'css/mk_checklist.css' %}">
 </head>
 
 <body>
-    <div class="content">
-        <div class="title">
-            <a href=" {% url 'checklist:home' %}"><img src="{% static 'img/back-btn.png' %}" alt="뒤로가기" width="20.16"
-                    height="18.71"></a>
-            <h3>체크리스트 생성</h3>
-        </div>
-
-        <form method="post" class="create_form">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="submit_btn">완료</button>
-        </form>
+  <div class="content">
+    <div class="title">
+      <a href=" {% url 'checklist:home' %}"><img src="{% static 'img/back-btn.png' %}" alt="뒤로가기" width="20.16"
+          height="18.71"></a>
+      <h3>체크리스트 생성</h3>
     </div>
+
+    <form method="post" class="create_form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="submit_btn">완료</button>
+    </form>
+  </div>
 </body>
 
 </html>
