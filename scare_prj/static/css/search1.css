@@ -14,12 +14,13 @@ button + label:hover {
 }
 
 body {
-  width: 345px;
+  width: 375px;
   height: 779px;
   padding: 40px 0 0;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 section header {

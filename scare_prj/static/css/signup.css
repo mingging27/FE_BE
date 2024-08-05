@@ -11,7 +11,7 @@
 
 body {
   width: 295px;
-  height: 732px;
+  height: 812px;
   padding: 40px;
   border: 1px solid black;
   display: flex;
@@ -22,11 +22,10 @@ body {
 header {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
 }
 
 img {
-  width: 131px;
+  width: 161px;
   height: 112px;
   margin-bottom: 50px;
 }
