@@ -27,7 +27,7 @@ header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 header img {
@@ -39,7 +39,7 @@ header img {
   font-size: 18px;
   font-weight: 700;
 
-  width: 365px;
+  width: 345px;
   height: 35px;
   background-color: rgba(201, 153, 249, 0.5);
   border: none;
@@ -114,7 +114,7 @@ li {
 }
 
 #search-form {
-  width: 350px;
+  width: 334px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -180,7 +180,8 @@ li {
   border-radius: 5px;
   border: 1px solid red;
   color: red;
-  margin-right: 20px;
+
+  margin-right: 10px;
 }
 
 p {
@@ -197,19 +198,5 @@ p {
 .applyLine {
   display: flex;
   flex-direction: row;
-  align-items: center;
-}
-
-.delLine {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 7px;
-}
-
-.modal_po {
-  width: 355px;
-  display: flex;
-  justify-content: center;
   align-items: center;
 }

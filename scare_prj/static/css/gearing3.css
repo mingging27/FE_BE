@@ -114,7 +114,7 @@ li {
 }
 
 #search-form {
-  width: 350px;
+  width: 334px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -180,7 +180,8 @@ li {
   border-radius: 5px;
   border: 1px solid red;
   color: red;
-  margin-right: 20px;
+
+  margin-right: 10px;
 }
 
 p {
