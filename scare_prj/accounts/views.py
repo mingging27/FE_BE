@@ -81,12 +81,15 @@ def gearing(request, id):
 
     searched = False
     searched_user = None
+    already_linked = False
 
     if 'gear_id' in request.GET:
         searched = True
         gear_id = request.GET.get('gear_id')
         try:
             searched_user = User.objects.get(username=gear_id)
+            if user.followings.filter(id=searched_user.id).exists():
+                already_linked = True
         except User.DoesNotExist:
             searched_user = None
 
@@ -94,7 +97,8 @@ def gearing(request, id):
         'follow_requests': follow_requests,
         'followers': followers,
         'searched': searched,
-        'searched_user': searched_user
+        'searched_user': searched_user,
+        'already_linked': already_linked
     })
 
 
@@ -108,6 +112,13 @@ def link_account(request, user_id):
         if from_user == to_user:
             return JsonResponse(
                 {"message": "자신에게 친구 신청을 할 수 없습니다."},
+                status=400,
+                json_dumps_params={'ensure_ascii': False}
+            )
+
+        if from_user.followings.filter(id=to_user.id).exists():
+            return JsonResponse(
+                {"message": "이미 연동된 계정입니다."},
                 status=400,
                 json_dumps_params={'ensure_ascii': False}
             )
@@ -224,6 +235,9 @@ def follow_reject(request):
 def unfollow(request, user_id):
     current_user = request.user
     user_to_unfollow = get_object_or_404(User, id=user_id)
+
+    Follow.objects.filter(from_user=current_user, to_user=user_to_unfollow).delete()
+    Follow.objects.filter(from_user=user_to_unfollow, to_user=current_user).delete()
 
     if user_to_unfollow in current_user.followings.all():
         current_user.followings.remove(user_to_unfollow)

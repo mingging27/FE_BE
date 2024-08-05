@@ -73,7 +73,7 @@ section {
 
 a {
   text-decoration: none;
-  padding: 20px 10px;
+  padding: 20px 15px;
   border-bottom: 3px solid rgba(201, 153, 249, 0.5);
   font-size: 16px;
   font-weight: 700;
@@ -84,7 +84,7 @@ a {
   display: flex;
   justify-content: center;
   margin-top: 30px;
-  margin-bottom: 90px;
+  margin-bottom: 80px;
 }
 
 .bottom-navigation {
@@ -116,7 +116,6 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 0.125rem;
-  
 }
 
 .nav-menu .menu .icon {

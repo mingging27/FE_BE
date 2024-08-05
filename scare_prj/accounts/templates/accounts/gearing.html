@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static "css/gearing3.css" %}">
+    <link rel="stylesheet" href="{% static "css/gearing5.css" %}">
     <title>효담 - 연동하기</title>
     <style>
       /* 기본적인 모달 스타일 */
@@ -42,7 +42,7 @@
         {% for request in follow_requests %}
         <li>
           <div class="list_o">
-            <img src="{% static "img/o.png"%}" />
+            <img src="{% static "img/o.png" %}" />
             <div class="name">{{ request.from_user.nickname }}</div>
           </div>
 
@@ -69,35 +69,40 @@
     </section>
 
     <section class="sec2">
-        <div class="secTitle">연동 계정 추가</div>
-        <div class="sec2_set">
+      <div class="secTitle">연동 계정 추가</div>
+      <div class="sec2_set">
         <div class="info">연동할 계정의 아이디를 작성해주세요.</div>
 
         <form id="search-form" action="{% url 'accounts:gearing' id=request.user.id %}" method="get">
-            <input type="text" name="gear_id" placeholder="아이디 작성" />
-            <button type="submit" id="search_icon"></button>
-            <label for="search_icon"></label>
+          <input type="text" name="gear_id" placeholder="아이디 작성" />
+          <button type="submit" id="search_icon"></button>
+          <label for="search_icon"></label>
         </form>
 
-    {% if searched %}
-    {% if searched_user %}
-    <ul class="search_result">
-      <li class="list_o">
-        <div class="applyLine">
-          <img src="{% static "img/o.png"%}" />
-          <div class="name">{{ searched_user.nickname }}</div>
-        </div>
-        
-        <form class="link-account-form" action="{% url 'accounts:link_account' searched_user.id %}" method="post">
-          {% csrf_token %}
-          <button type="submit" id="apply"></button>
-          <label for="apply">연동 신청</label>
-        </form>
-      </li>
-    </ul>
-    {% else %}
-    <p class="none">일치하는 계정이 없습니다.</p>
-    {% endif %} {% endif %}
+        {% if searched %}
+        {% if searched_user %}
+        <ul class="search_result">
+          <li class="list_o">
+            <div class="applyLine">
+              <img src="{% static "img/o.png" %}" />
+              <div>{{ searched_user.nickname }}</div>
+            </div>
+            {% if already_linked %}
+            <p>이미 연동된 계정입니다.</p>
+            {% else %}
+            <form class="link-account-form" action="{% url 'accounts:link_account' searched_user.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" id="apply"></button>
+              <label for="apply">연동 신청</label>
+            </form>
+            {% endif %}
+          </li>
+        </ul>
+        {% else %}
+        <p class="none">일치하는 계정이 없습니다.</p>
+        {% endif %}
+        {% endif %}
+      </div>
     </section>
 
     <section class="sec3">
