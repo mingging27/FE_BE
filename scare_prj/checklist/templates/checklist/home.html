@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token }}" />
     <!-- CSRF 토큰을 메타 태그로 추가 -->
-    <link rel="stylesheet" href="{% static 'css/checklist2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/checklist2.css' %}" />
     <title>체크 리스트</title>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -116,30 +116,30 @@
 
     <!-- nav bar -->
     <div class="bottom-navigation">
-        <a class="nav-menu" href="{% url 'cal:home' %}">
-          <div class="menu">
-            <img class="icon" src="{% static 'img/nav-01home_gray.png' %}" />
-            <span>홈</span>
-          </div>
-        </a>
-        <a class="nav-menu" href="{% url 'checklist:home' %}">
-          <div class="menu">
-            <img class="icon" src="{% static 'img/nav-02checklist_pur.png' %}" />
-            <span>체크리스트</span>
-          </div>
-        </a>
-        <a class="nav-menu" href="{% url 'record:home' %}">
-          <div class="menu">
-            <img class="icon" src="{% static 'img/nav-03memo.png' %}" />
-            <span>기록</span>
-          </div>
-        </a>
-        <a class="nav-menu" href="{% url 'accounts:mypage' %}">
-          <div class="menu">
-            <img class="icon" src="{% static 'img/nav-04mypage.png' %}" />
-            <span>마이페이지</span>
-          </div>
-        </a>
+      <a class="nav-menu" href="{% url 'cal:home' %}">
+        <div class="menu">
+          <img class="icon" src="{% static 'img/nav-01home_gray.png' %}" />
+          <span>홈</span>
+        </div>
+      </a>
+      <a class="nav-menu" href="{% url 'checklist:home' %}">
+        <div class="menu">
+          <img class="icon" src="{% static 'img/nav-02checklist_pur.png' %}" />
+          <span>체크리스트</span>
+        </div>
+      </a>
+      <a class="nav-menu" href="{% url 'record:home' %}">
+        <div class="menu">
+          <img class="icon" src="{% static 'img/nav-03memo.png' %}" />
+          <span>기록</span>
+        </div>
+      </a>
+      <a class="nav-menu" href="{% url 'accounts:mypage' %}">
+        <div class="menu">
+          <img class="icon" src="{% static 'img/nav-04mypage.png' %}" />
+          <span>마이페이지</span>
+        </div>
+      </a>
     </div>
   </body>
 </html>
