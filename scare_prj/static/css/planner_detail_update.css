@@ -27,12 +27,14 @@
     border: 1px solid black;
   }
     */
-  body {
-    width: 375px;
-    margin: 0;
-    padding: 0;
-    position: relative; /* Ensure body is the reference point for fixed positioning */
-  }
+body {
+padding: 0;
+position: relative;
+width: 375px;
+height: 812px;
+margin: 0;
+border: 1px solid black;
+}
   
   nav {
     display: flex;
@@ -74,11 +76,12 @@
   }
   
   .plan-title .form-control {
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove box shadow */
-    font-size: 18px; /* Adjust font size if needed */
-    padding: 10px 0 10px 20px; /* Remove padding if needed */
-    width: calc(100% - 40px); /* Adjust width to fit container */
+    border: none; 
+    box-shadow: none; 
+    font-size: 18px;
+    padding: 10px 0 10px 20px; 
+    width: calc(100% - 40px); 
+    outline: none;
   }
   
   .plan-title .form-control::placeholder {
@@ -508,9 +511,7 @@
   .plan-settingbtn {
     position: fixed;
     bottom: 10px;
-    width: 100%;
-    background-color: #fff;
-
+    width: 375px;
     display: flex;
     gap: 25px;
 

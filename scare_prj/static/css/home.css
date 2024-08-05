@@ -15,6 +15,7 @@ a,
 button {
   cursor: pointer;
 }
+
 a {
   color: #000;
   color: var(--main-black);
@@ -23,9 +24,9 @@ a {
 
 body {
   width: 375px;
-  height: 667px;
-  margin: 0;
+  height: 812px;
   border: 1px solid black;
+  margin: 0;
 }
 
 nav {
@@ -134,8 +135,7 @@ nav .nav-title .date {
 
 .container-schedule .schedule {
   background-color: rgb(255, 255, 255);
-  height: 400px;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .dayoff {
@@ -180,12 +180,12 @@ td {
 
 .schedule-container {
   margin-top: 5px; /* 날짜와 일정 제목 사이의 간격 조정 */
-  height: 66px;
+  height: 90px;
 }
 
 .schedule-item {
   font-size: 10px; /* 일정 제목 크기 조정 */
-  background-color: aquamarine;
+  background-color: #c3c3c3;
   margin: 2px 0;
   border-radius: 5px;
   width: 50px;

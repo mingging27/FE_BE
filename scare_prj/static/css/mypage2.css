@@ -12,7 +12,7 @@
 body {
   width: 375px;
   margin: 0;
-  height: 781px;
+  height: 812px;
   padding: 0;
   border: 1px solid black;
   display: flex;
@@ -28,8 +28,6 @@ header {
 nav {
   display: flex;
   flex-direction: row;
-
-  width: 315px;
   height: 80px;
   padding: 20px;
   border-bottom: 15px solid rgba(201, 153, 249, 0.5);
