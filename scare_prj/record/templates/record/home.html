@@ -10,49 +10,24 @@
 </head>
 
 <body>
-    <div class="title">
-        <img src="{% static 'img/Logo.png' %}" alt="효담 로고" width="35" height="35">
-    </div>
     <div class="content">
-        {% for record in records %}
-        <div class="post">
-            <h3 class="post_title"><a href="{%url 'record:detail' record.id %}">{{ record.title }}</a></h3>
-            <p class="post_content">{{record.content}}</p>
-            {%if record.image %}
-            <img src="{{record.image.url}}" width="130">
-            {%endif%}
-            <p class="date">{{record.created_at|date:"Y.m.d"}}</p>
+        <div class="title">
+            <img src="{% static 'img/Logo.png' %}" alt="효담 로고" width="35" height="35">
         </div>
-        {% empty %} 작성된 기록이 없습니다.{% endfor %}
+        <div class="post_wrap">
+            {% for record in records %}
+            <div class="post">
+                <h3 class="post_title"><a href="{%url 'record:detail' record.id %}">{{ record.title }}</a></h3>
+                <p class="post_content">{{record.content}}</p>
+                {%if record.image %}
+                <img src="{{record.image.url}}" width="130">
+                {%endif%}
+                <p class="date">{{record.created_at|date:"Y.m.d"}}</p>
+            </div>
+            {% empty %} 작성된 기록이 없습니다.{% endfor %}
+        </div>
+        <a href="{%url 'record:create' %}"><img src="{% static 'img/+.png' %}" class="plus" height="30"></a>
     </div>
-    <a href="{%url 'record:create' %}"><img src="{% static 'img/+.png' %}" class="plus" height="30"></a>
-<!-- nav bar -->
-<div class="bottom-navigation">
-    <a class="nav-menu" href="{% url 'cal:home' %}">
-      <div class="menu">
-        <img class="icon" src="{% static 'img/nav-01home_gray.png' %}" />
-        <span>홈</span>
-      </div>
-    </a>
-    <a class="nav-menu" href="{% url 'checklist:home' %}">
-      <div class="menu">
-        <img class="icon" src="{% static 'img/nav-02checklist.png' %}" />
-        <span>체크리스트</span>
-      </div>
-    </a>
-    <a class="nav-menu" href="{% url 'record:home' %}">
-      <div class="menu">
-        <img class="icon" src="{% static 'img/nav-03memo_pur.png' %}" />
-        <span>기록</span>
-      </div>
-    </a>
-    <a class="nav-menu" href="{% url 'accounts:mypage' %}">
-      <div class="menu">
-        <img class="icon" src="{% static 'img/nav-04mypage.png' %}" />
-        <span>마이페이지</span>
-      </div>
-    </a>
-</div>
 </body>
 
 </html>
