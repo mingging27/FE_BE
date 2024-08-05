@@ -134,13 +134,10 @@ nav .nav-title .date {
   font-size: 12px;
 }
 
-
 .container-schedule .schedule {
-
   background-clip: content-box;
   padding-top: 20px;
   padding-bottom: 10px;
-
 }
 
 .divider {
@@ -157,7 +154,7 @@ nav .nav-title .date {
 .planner {
   position: relative;
   padding: 5px 20px 10px 20px;
-  height: 320px;
+  height: 230px;
 }
 
 .plan-group {
@@ -180,9 +177,6 @@ nav .nav-title .date {
   align-items: left;
 }
 
-.plan-group .plan-txt .title {
-}
-
 .plan-group .plan-txt .time {
   font-size: smaller;
   color: #aaaaaa;
@@ -200,7 +194,6 @@ nav .nav-title .date {
 }
 
 .add-btn {
-  
   position: absolute;
   left: 324px;
   bottom: 92px;
@@ -263,7 +256,6 @@ td {
   padding: 10px 22px 7px 10px;
 }
 
-
 thead th {
   padding: 0;
 }
@@ -272,7 +264,6 @@ table {
   width: 100%;
   font-size: 13px;
 }
-
 
 /* 날짜와 일정 제목 구분 */
 td {
@@ -283,25 +274,25 @@ td {
 
 .date-container {
   text-align: center;
-  margin-bottom:2px; 
+  margin-bottom: 2px;
   width: 50px;
 }
 
 .schedule-container {
   margin-top: 5px;
   height: 22px;
-  display: flex; 
-  justify-content: center; 
-  flex-wrap: wrap; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1px;
 }
 
 .schedule-item {
-  ont-size: 16px;
+  font-size: 16px;
   line-height: 1;
   padding: 0;
-  color: #000; 
-  text-align: center; 
+  color: #000;
+  text-align: center;
 }
 
 .plan-group.입원 .titlebar {
@@ -320,7 +311,6 @@ td {
   background-color: #ffffa5; /* 진료일 경우 색상 */
 }
 
-
 .schedule-item.입원 {
   color: #baeeff; /* 입원일 경우 색상 */
 }
@@ -335,4 +325,15 @@ td {
 
 .schedule-item.진료 {
   color: #ffffa5; /* 진료일 경우 색상 */
+}
+
+.addCl img {
+  width: 30px;
+  height: 30px;
+}
+
+.addCl {
+  display: flex;
+  justify-content: end;
+  margin: 20px;
 }
