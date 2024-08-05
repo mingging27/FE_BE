@@ -12,7 +12,7 @@ class TodoForm(forms.ModelForm):
             'due_time': forms.TimeInput(attrs={'type': 'time'}),
         }
         labels = {
-            'title' : '',
+            'title' : '제목',
             'due_date': '날짜',
             'due_time' : '시간',
             'repeat_on' : '반복'

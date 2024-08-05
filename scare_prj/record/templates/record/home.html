@@ -1,16 +1,30 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ko">
+<<<<<<< HEAD
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document_main</title>
+    <link rel="stylesheet" href="{% static 'css/document_main.css' %}">
+</head>
+=======
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document_main</title>
     <link rel="stylesheet" href="{% static 'css/document_main.css' %}" />
   </head>
+>>>>>>> 2191dfe37640b6b3e6337f80caed5283b8e6ff2e
 
   <body>
     <div class="content">
+<<<<<<< HEAD
+        <header><img src="{% static "img/logo.png"%}" /></header>
+=======
         <header><img src="{% static 'img/Logo.png' %}" /></header>
+>>>>>>> 2191dfe37640b6b3e6337f80caed5283b8e6ff2e
 
         <div class="post_wrap">
             {% for record in records %}
@@ -18,9 +32,7 @@
                 <h3 class="post_title"><a href="{%url 'record:detail' record.id %}">{{ record.title }}</a></h3>
                 <p class="post_content">{{record.content}}</p>
                 {%if record.image %}
-                <div class="img_div">
-                    <img src="{{record.image.url}}" width="130">
-                </div>
+                <img src="{{record.image.url}}" width="130">
                 {%endif%}
                 <p class="date">{{record.created_at|date:"Y.m.d"}}</p>
             </div>

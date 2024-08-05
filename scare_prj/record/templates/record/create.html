@@ -25,15 +25,13 @@
                 <input type="text" name="title" class="text_title" placeholder="제목을 입력해 주세요." id="text_title">
                 <textarea class="text_content" name="content" placeholder="내용을 작성해 주세요." id="text_content"></textarea>
             </div>
-            <div class="img_div">
+            <div class="file_submit">
                 {%if record.image%}
                 <img src="{{record.image.url}}">
                 {%endif%}
-            </div>
-            <div class="file_submit">
                 <input type="file" class="fileInput" name="image" value="이미지" id="fileInput">
                 <label class="fileInputLabel" id="fileInputLabel">
-                    <img src="{% static 'img/Imgload.png' %}" alt="Upload Icon" width="30" height="30" class="img_btn">
+                    <img src="{% static 'img/Imgload.png' %}" alt="Upload Icon" width="30" height="30">
                 </label>
                 <div class="btn_div">
                     <button type="reset" class="remove_content" id="remove_content">삭제</button>
@@ -59,6 +57,9 @@
                 submitButton.classList.remove('active');
             }
         }
+
+        textInput.addEventListener('input', checkInput);
+        textArea.addEventListener('input', checkInput);
     </script>
 </body>
 
