@@ -24,7 +24,6 @@ a {
 body {
   width: 375px;
   height: 812px;
-  margin: 0;
   position: relative;
   border: 1px solid black;
 }
