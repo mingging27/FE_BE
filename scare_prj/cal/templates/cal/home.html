@@ -55,39 +55,28 @@
             <tr>
               {% for day, cls in row %}
               <td class="{{ cls }}">
-                <!--링크를 위한 태그-->
-                {% if cls == 'prev-month' %} {% if month == 1 %}
-                <a href="{% url 'cal:home2' prev_year 12 day %}">{{ day }}</a>
-                {% else %}
-                <a href="{% url 'cal:home2' year prev_month day %}">{{ day }}</a>
-                {% endif %} {% elif cls == 'next-month' %} {% if month == 12 %}
-                <a href="{% url 'cal:home2' next_year 1 day %}">{{ day }}</a>
-                {% else %}
-                <a href="{% url 'cal:home2' year next_month day %}">{{ day }}</a>
-                {% endif %} {% else %}
-                <a href="{% url 'cal:home2' year month day %}">{{ day }}</a>
-                {% endif %}
+                <!-- 날짜 부분 -->
+                <div class="date-container">
+                  <a href="{% url 'cal:home2' year month day %}">{{ day }}</a>
+                </div>
 
-                <!--달력에 일정 보여주기-->
-                {% for schedule in month_schedules %}
-                <!--이번 달-->
-                {% if cls == 'current-month' %} {% if schedule.date.year == year and schedule.date.month == month and schedule.date.day == day %}
-                <div>{{ schedule.title }}</div>
-                {% endif %}
-                <!--이전 달-->
-                {% if cls == 'prev-month' %} {% if month == 1 %} {% if schedule.date.year == year|add:-1 and schedule.date.month == 12 and schedule.date.day ==
-                day %}
-                <div>{{ schedule.title }}</div>
-                {% endif %} {% else %} {% if schedule.date.year == year and schedule.date.month == month|add:-1 and schedule.date.day == day %}
-                <div>{{ schedule.title }}</div>
-                {% endif %} {% endif %}
-                <!--다음 달-->
-                {% if cls == 'next-month' %} {% if month == 12 %} {% if schedule.date.year == year|add:1 and schedule.date.month == 1 and schedule.date.day ==
-                day %}
-                <div>{{ schedule.title }}</div>
-                {% endif %} {% else %} {% if schedule.date.year == year and schedule.date.month == month|add:1 and schedule.date.day == day %}
-                <div>{{ schedule.title }}</div>
-                {% endif %} {% endif %} {% endif %} {% endfor %}
+                <!-- 일정 부분 -->
+                <div class="schedule-container">
+                  {% for schedule in month_schedules %} {% if cls == 'current-month' %} {% if schedule.date.year == year and schedule.date.month == month and
+                  schedule.date.day == day %}
+                  <div class="schedule-item {{ schedule.related_words|lower }}">{{ schedule.title }}</div>
+                  {% endif %} {% if cls == 'prev-month' %} {% if month == 1 %} {% if schedule.date.year == year|add:-1 and schedule.date.month == 12 and
+                  schedule.date.day == day %}
+                  <div class="schedule-item {{ schedule.related_words|lower }}">{{ schedule.title }}</div>
+                  {% endif %} {% else %} {% if schedule.date.year == year and schedule.date.month == month|add:-1 and schedule.date.day == day %}
+                  <div class="schedule-item {{ schedule.related_words|lower }}">{{ schedule.title }}</div>
+                  {% endif %} {% endif %} {% if cls == 'next-month' %} {% if month == 12 %} {% if schedule.date.year == year|add:1 and schedule.date.month == 1
+                  and schedule.date.day == day %}
+                  <div class="schedule-item {{ schedule.related_words|lower }}">{{ schedule.title }}</div>
+                  {% endif %} {% else %} {% if schedule.date.year == year and schedule.date.month == month|add:1 and schedule.date.day == day %}
+                  <div class="schedule-item {{ schedule.related_words|lower }}">{{ schedule.title }}</div>
+                  {% endif %} {% endif %} {% endfor %}
+                </div>
               </td>
               {% endfor %}
             </tr>
@@ -98,34 +87,34 @@
     </div>
 
     <!-- nav bar -->
-    <div class="bottom-navigation">
-      <a class="nav-menu" href="{% url 'cal:home' %}">
-        <div class="menu">
-          <!--"{% static './img/logo_pur.png' %}"-->
-          <img class="icon" src="{% static 'img/nav-01home.png' %}" />
-          <span>홈</span>
-        </div>
-      </a>
-      <a class="nav-menu" href="{% url 'checklist:home' %}">
-        <div class="menu">
-          <img class="icon" src="{% static 'img/nav-02checklist.png' %}" />
-          <span>체크리스트</span>
-        </div>
-      </a>
-      <a class="nav-menu" href="{% url 'record:home' %}">
-        <div class="menu">
-          <img class="icon" src="{% static 'img/nav-03memo.png' %}" />
-          <span>기록</span>
-        </div>
-      </a>
-      <a class="nav-menu" href="{% url 'accounts:mypage' %}">
-        <div class="menu">
-          <img class="icon" src="{% static 'img/nav-04mypage.png' %}" />
-          <span>마이페이지</span>
-        </div>
-      </a>
+    <div class="nav_po">
+      <div class="bottom-navigation">
+        <a class="nav-menu" href="{% url 'cal:home' %}">
+          <div class="menu">
+            <img class="icon" src="{% static 'img/nav-01home_gray.png' %}" />
+            <span>홈</span>
+          </div>
+        </a>
+        <a class="nav-menu" href="{% url 'checklist:home' %}">
+          <div class="menu">
+            <img class="icon" src="{% static 'img/nav-02checklist_pur.png' %}" />
+            <span>체크리스트</span>
+          </div>
+        </a>
+        <a class="nav-menu" href="{% url 'record:home' %}">
+          <div class="menu">
+            <img class="icon" src="{% static 'img/nav-03memo.png' %}" />
+            <span>기록</span>
+          </div>
+        </a>
+        <a class="nav-menu" href="{% url 'accounts:mypage' %}">
+          <div class="menu">
+            <img class="icon" src="{% static 'img/nav-04mypage.png' %}" />
+            <span>마이페이지</span>
+          </div>
+        </a>
+      </div>
     </div>
-    <br />
   </body>
   <script src="{% static './js/home.js' %}"></script>
 </html>
