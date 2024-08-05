@@ -24,7 +24,6 @@ body {
   width: 375px;
   height: 812px;
   border: 1px solid black;
-  margin: 0;
 }
 
 nav {
@@ -101,12 +100,12 @@ nav .nav-title .date {
   background-color: #ffffff;
   border-radius: 0;
   border-top: 1.5px solid #e1e1e1 !important;
-  padding: 12px 0;
   width: 375px;
+  bottom: 0;
   display: flex;
-
-  position: relative;
-  top: 120px;
+  height: 3.4rem;
+  padding-top: 12px;
+  z-index: 10;
 }
 
 .nav-menu {
@@ -135,11 +134,9 @@ nav .nav-title .date {
 }
 
 .container-schedule .schedule {
-
   background-clip: content-box;
   padding-top: 20px;
   padding-bottom: 10px;
-
 }
 
 .divider {
@@ -156,6 +153,7 @@ nav .nav-title .date {
 .planner {
   position: relative;
   padding: 5px 20px 10px 20px;
+  height: 230px;
 }
 
 .plan-group {
@@ -195,7 +193,6 @@ nav .nav-title .date {
 }
 
 .add-btn {
-  
   position: absolute;
   left: 324px;
   bottom: 92px;
@@ -327,4 +324,15 @@ td {
 
 .schedule-item.진료 {
   color: #ffffa5; /* 진료일 경우 색상 */
+}
+
+.addCl img {
+  width: 30px;
+  height: 30px;
+}
+
+.addCl {
+  display: flex;
+  justify-content: end;
+  margin: 20px;
 }

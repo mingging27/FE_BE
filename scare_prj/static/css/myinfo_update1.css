@@ -10,18 +10,20 @@
 }
 
 body {
-  width: 355px;
-  height: 779px;
-  padding: 33px 10px 0;
+  width: 375px;
+  height: 812px;
+  padding: 33px 0;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  margin-left: 15px;
 }
 
 header img {

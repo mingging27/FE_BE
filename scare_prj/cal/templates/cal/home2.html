@@ -84,22 +84,23 @@
           {% endfor %}
         </div>
       </div>
-      <a href="{% url 'cal:add_schedule' year month selected_day %}">
-        <div class="add-btn"></div>
-      </a>
+    </div>
+
+    <div class="addCl">
+      <a href="{% url 'cal:add_schedule' year month selected_day  %}"> <img src="{% static "img/+.png"%}" class="plus" /></a>
     </div>
 
     <div class="nav_po">
       <div class="bottom-navigation">
         <a class="nav-menu" href="{% url 'cal:home' %}">
           <div class="menu">
-            <img class="icon" src="{% static 'img/nav-01home_gray.png' %}" />
+            <img class="icon" src="{% static 'img/nav-01home.png' %}" />
             <span>홈</span>
           </div>
         </a>
         <a class="nav-menu" href="{% url 'checklist:home' %}">
           <div class="menu">
-            <img class="icon" src="{% static 'img/nav-02checklist_pur.png' %}" />
+            <img class="icon" src="{% static 'img/nav-02checklist.png' %}" />
             <span>체크리스트</span>
           </div>
         </a>

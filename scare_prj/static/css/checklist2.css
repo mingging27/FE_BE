@@ -13,10 +13,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 body {
-  width: 335px;
+  width: 375px;
   height: 812px;
   border: 1px solid black;
-  margin: 0;  
+  margin: 0;
 }
 
 header {
@@ -119,23 +119,20 @@ label {
 }
 
 .plus {
-
-
-  position: absolute;
-  left: 324px;
-  bottom: 92px;
-  width: 35px;
-  height: 35px;
-  
+  width: 30px;
+  height: 30px;
   cursor: pointer;
 }
 
 .addCl {
-  height: 3000px;
   display: flex;
-  flex-direction: column;
+  justify-content: end;
+
+  cursor: pointer;
+  display: flex;
   align-items: end;
   justify-content: end;
+  margin: 20px;
 }
 
 a {
@@ -143,13 +140,8 @@ a {
   color: black;
 }
 
-.nav_po {
-  height: 610px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: center;
+section {
+  height: 560px;
 }
 
 .bottom-navigation {
@@ -158,10 +150,9 @@ a {
   border-radius: 0;
   border-top: 1.5px solid #e1e1e1 !important;
   width: 375px;
-
-  height: 3.4rem;
   display: flex;
-  padding: 12px 0;
+  height: 3.4rem;
+  padding-top: 12px;
 }
 
 .nav-menu {
