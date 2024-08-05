@@ -1,7 +1,6 @@
 @font-face {
   font-family: "NanumBarunpen";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff")
-    format("woff");
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -18,7 +17,7 @@ body {
   height: 812px;
   border: 1px solid black;
   padding: 0 20px;
-margin: 0;  
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -129,7 +128,10 @@ label {
 }
 
 .addCl {
+  height: 3000px;
   display: flex;
+  flex-direction: column;
+  align-items: end;
   justify-content: end;
 }
 
@@ -138,18 +140,24 @@ a {
   color: black;
 }
 
+.nav_po {
+  height: 610px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
 .bottom-navigation {
   align-items: flex-start !important;
   background-color: #ffffff;
   border-radius: 0;
   border-top: 1.5px solid #e1e1e1 !important;
   width: 375px;
-  bottom: 0;
-  display: flex;
+
   height: 3.4rem;
+  display: flex;
   padding: 12px 0;
-  position: fixed;
-  z-index: 10;
 }
 
 .nav-menu {
