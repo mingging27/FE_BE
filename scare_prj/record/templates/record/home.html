@@ -20,7 +20,9 @@
                 <h3 class="post_title"><a href="{%url 'record:detail' record.id %}">{{ record.title }}</a></h3>
                 <p class="post_content">{{record.content}}</p>
                 {%if record.image %}
-                <img src="{{record.image.url}}" width="130">
+                <div class="img_div">
+                    <img src="{{record.image.url}}" width="130">
+                </div>
                 {%endif%}
                 <p class="date">{{record.created_at|date:"Y.m.d"}}</p>
             </div>

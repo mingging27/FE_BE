@@ -36,6 +36,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 46px;
     border-bottom: 1px solid black;
     padding-bottom: 13px;
 }
@@ -73,6 +74,11 @@ body {
     margin:0
 }
 
+.img_div {
+  margin: 0;
+  height: 90px;
+  overflow: hidden;
+}
 
 .post_title {
     margin: 0;
@@ -115,7 +121,7 @@ body {
 .plus {
     position: absolute;
     right: 24px;
-    bottom: 92px;
+    bottom: 80px;
 }
 
 .bottom-navigation {

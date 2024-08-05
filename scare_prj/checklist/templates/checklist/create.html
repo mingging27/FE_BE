@@ -11,13 +11,13 @@
 </head>
 
 <body>
-    <div class="title">
-        <a href=" {% url 'checklist:home' %}"><img src="{% static 'img/back-btn.png' %}" alt="뒤로가기" width="20.16"
-                height="18.71"></a>
-        <h3>체크리스트 생성</h3>
-    </div>
-
     <div class="content">
+        <div class="title">
+            <a href=" {% url 'checklist:home' %}"><img src="{% static 'img/back-btn.png' %}" alt="뒤로가기" width="20.16"
+                    height="18.71"></a>
+            <h3>체크리스트 생성</h3>
+        </div>
+
         <form method="post" class="create_form">
             {% csrf_token %}
             <input type="text" placeholder="제목을 입력하세요." required id="id_title" class="checklist_title">

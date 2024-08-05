@@ -27,7 +27,12 @@ input {
 }
 
 .content {
-    margin: 19px 0 0 31px;
+    margin: 19px 0 0 0;
+}
+
+.create_form {
+    margin-left: 31px;
+    margin-top: 19px;
 }
 
 .title {
@@ -35,6 +40,7 @@ input {
     display: flex;
     align-items: center;
     margin: 0 auto;
+    margin-top: 46px;
     border-bottom: 1px solid black;
     padding-bottom: 12px;
 }
@@ -118,7 +124,7 @@ input {
     background-color: white;
     border-radius: 5px;
     padding: 6px 21px;
-    margin-top: 238px;
+    margin-top: 219px;
     margin-left: 257px;
     box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
 }

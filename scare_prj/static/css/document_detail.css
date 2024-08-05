@@ -24,6 +24,7 @@ body {
     width: 100%;
     height: 93px;
     display: flex;
+    margin-top: 46px;
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid black;
@@ -123,7 +124,7 @@ body {
 .btn_div {
     display: flex;
     position: absolute;
-    right: 0px;
+    right:33px;
     bottom: 0px;
 }
 
